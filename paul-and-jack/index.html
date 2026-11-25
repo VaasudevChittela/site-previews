@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paul &amp; Jack | European Bakery &amp; Café in Raleigh, Cary &amp; Wake Forest</title>
+<meta name="description" content="Flaky croissants, bomboloni, cakes and coffee. European-style bakery cafés in Downtown Raleigh, Cary and Wake Forest, NC.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f8f2e9; --cream-2:#f1e7d8; --card:#fffdf9;
+  --espresso:#2b1d16; --cocoa:#5a3d2e; --muted:#8a7464;
+  --butter:#e8b04b; --rose:#c86b5a; --line:#e6d9c6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",system-ui,sans-serif;background:var(--cream);color:var(--espresso);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rose)}
+
+.concept{background:var(--espresso);color:#d9c9b8;font-size:13px;text-align:center;padding:8px 16px}
+.concept b{color:#fff}
+
+header{position:sticky;top:0;z-index:20;background:rgba(248,242,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:Fraunces,serif;font-size:26px;font-weight:600;text-decoration:none;letter-spacing:-.02em}
+.logo i{font-weight:400;color:var(--rose)}
+nav ul{display:flex;gap:28px;list-style:none;font-size:15px;font-weight:500}
+nav a{text-decoration:none;color:var(--cocoa)}
+nav a:hover{color:var(--rose)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-dark{background:var(--espresso);color:var(--cream)}
+.btn-dark:hover{background:var(--cocoa)}
+.btn-line{border:1.5px solid var(--espresso)}
+.btn-line:hover{background:var(--espresso);color:var(--cream)}
+
+.hero{padding:72px 0 88px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(44px,6.4vw,84px);margin:18px 0 22px}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--rose)}
+.hero p{font-size:19px;color:var(--cocoa);max-width:500px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.proof{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap}
+.proof div{font-size:14px;color:var(--muted)}
+.proof strong{display:block;font-family:Fraunces,serif;font-size:30px;color:var(--espresso);font-weight:600}
+
+.plate{position:relative;aspect-ratio:1;max-width:480px;justify-self:center;width:100%}
+.plate .disc{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0,#f6ecdf 45%,#e9d8c2 100%);box-shadow:0 40px 80px -30px rgba(43,29,22,.35),inset 0 0 0 14px rgba(255,255,255,.6)}
+.plate svg{position:absolute;inset:12%;width:76%;height:76%}
+.sticker{position:absolute;background:var(--butter);color:var(--espresso);border-radius:50%;width:118px;height:118px;display:grid;place-items:center;text-align:center;font-family:Fraunces,serif;font-size:15px;line-height:1.15;transform:rotate(-12deg);right:-6px;top:6%;box-shadow:0 12px 24px -10px rgba(43,29,22,.4)}
+.sticker b{font-size:30px;display:block}
+
+section{padding:96px 0}
+.head{max-width:640px;margin-bottom:48px}
+.head h2{font-size:clamp(34px,4.6vw,54px);margin-top:12px}
+.head p{color:var(--cocoa);font-size:18px;margin-top:14px}
+
+.case{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.items{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.item{border:1px solid var(--line);border-radius:20px;padding:28px;background:var(--cream);position:relative;overflow:hidden}
+.item .tag{position:absolute;top:18px;right:18px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--espresso);color:var(--cream);padding:4px 10px;border-radius:999px}
+.item .ic{width:56px;height:56px;margin-bottom:18px}
+.item h3{font-size:24px;margin-bottom:6px}
+.item p{color:var(--cocoa);font-size:15px}
+
+.events .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.events ul{list-style:none;display:grid;gap:18px;margin-top:28px}
+.events li{display:flex;gap:14px;align-items:flex-start}
+.events li span{flex:none;width:28px;height:28px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:700}
+.quote-card{background:var(--espresso);color:var(--cream);border-radius:28px;padding:44px}
+.quote-card p{font-family:Fraunces,serif;font-size:26px;line-height:1.3;font-style:italic;font-weight:400}
+.quote-card cite{display:block;margin-top:20px;font-style:normal;font-size:14px;color:#c9b6a3}
+
+.reviews{background:var(--cream-2)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:var(--card);border-radius:20px;padding:28px;border:1px solid var(--line)}
+.stars{color:var(--butter);letter-spacing:2px}
+.rev p{font-family:Fraunces,serif;font-size:20px;line-height:1.35;margin:12px 0 16px}
+.rev small{color:var(--muted);font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chips span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:14px;color:var(--cocoa)}
+
+.locs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.loc{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column}
+.loc .area{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rose)}
+.loc h3{font-size:30px;margin:6px 0 14px}
+.loc address{font-style:normal;color:var(--cocoa)}
+.loc .rating{font-size:14px;color:var(--muted);margin:10px 0 16px}
+.loc table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:22px}
+.loc td{padding:6px 0;border-top:1px solid var(--line)}
+.loc td:last-child{text-align:right;color:var(--cocoa)}
+.loc .actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.loc .btn{padding:10px 18px;font-size:14px}
+
+.insta{background:var(--espresso);color:var(--cream);text-align:center;padding:88px 0}
+.insta h2{font-size:clamp(32px,4.4vw,52px)}
+.insta p{color:#d9c9b8;font-size:18px;margin:14px auto 30px;max-width:520px}
+.insta .btn{background:var(--butter);color:var(--espresso)}
+
+footer{padding:32px 0;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  nav ul{display:none}
+  .hero .wrap,.events .wrap{grid-template-columns:1fr}
+  .hero{padding:48px 0 64px}
+  .plate{max-width:340px}
+  .items,.revs,.locs{grid-template-columns:1fr}
+  section{padding:68px 0}
+  .quote-card{padding:32px}
+}
+@media (max-width:480px){
+  header .btn{display:none}
+  .sticker{width:96px;height:96px;font-size:13px}
+  .sticker b{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<div class="concept"><b>Website concept</b> — a free sample design made for Paul &amp; Jack. Not affiliated with or published by the business.</div>
+
+<header>
+  <div class="wrap">
+    <a href="#top" class="logo">Paul <i>&amp;</i> Jack</a>
+    <nav><ul>
+      <li><a href="#case">The case</a></li>
+      <li><a href="#events">Cakes &amp; events</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#locations">Locations</a></li>
+    </ul></nav>
+    <a class="btn btn-dark" href="#locations">Find a café</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-top:72px">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">European bakery &amp; café · Raleigh · Cary · Wake Forest</span>
+      <h1>Pastries that taste like a trip to <em>Europe.</em></h1>
+      <p>Flaky croissants, bomboloni, celebration cakes and good coffee, made fresh every morning and served with real hospitality.</p>
+      <div class="cta">
+        <a class="btn btn-dark" href="#locations">Visit us today</a>
+        <a class="btn btn-line" href="#events">Order for an event</a>
+      </div>
+      <div class="proof">
+        <div><strong>4.8★</strong>average on Google</div>
+        <div><strong>2,700+</strong>reviews</div>
+        <div><strong>3</strong>cafés in the Triangle</div>
+      </div>
+    </div>
+    <div class="plate" aria-hidden="true">
+      <div class="disc"></div>
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M30 120c10-38 40-62 70-62s60 24 70 62c-12 10-30 16-70 16s-58-6-70-16z" fill="#e3a54a"/>
+        <path d="M30 120c10-38 40-62 70-62s60 24 70 62" stroke="#b9752a" stroke-width="3"/>
+        <path d="M62 78c6 18 8 36 6 56M88 64c4 22 4 46 0 70M112 64c-4 22-4 46 0 70M138 78c-6 18-8 36-6 56" stroke="#b9752a" stroke-width="3" stroke-linecap="round"/>
+        <path d="M44 132c16 6 34 8 56 8s40-2 56-8" stroke="#a8661f" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="78" cy="82" rx="10" ry="4" fill="#f6d79a" opacity=".7" transform="rotate(-20 78 82)"/>
+      </svg>
+      <div class="sticker"><span><b>Fresh</b>every<br>morning</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="case" class="case">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">From the case</span>
+      <h2>Guest favorites</h2>
+      <p>A taste of what you’ll find. The case changes daily, so come early for the best pick.</p>
+    </div>
+    <div class="items">
+      <div class="item"><span class="tag">Popular</span>
+        <svg class="ic" viewBox="0 0 56 56" fill="none"><path d="M6 36c4-14 12-22 22-22s18 8 22 22c-4 3-10 5-22 5S10 39 6 36z" fill="#e3a54a"/><path d="M8 36c6-3 12-4 20-4s14 1 20 4" stroke="#5a3d2e" stroke-width="5" stroke-linecap="round"/></svg>
+        <h3>Chocolate ganache croissant</h3><p>All-butter layers filled and topped with silky chocolate.</p></div>
+      <div class="item"><span class="tag">Popular</span>
+        <svg class="ic" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="20" fill="#e3a54a"/><path d="M28 28m-4 0a4 4 0 1 0 8 0a8 8 0 1 0-16 0a12 12 0 1 0 24 0" stroke="#b9752a" stroke-width="3" fill="none"/><path d="M14 22c6-4 22-4 28 0" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/></svg>
+        <h3>Cinnamon roll</h3><p>Soft, swirled and finished with a sweet glaze.</p></div>
+      <div class="item"><span class="tag">Popular</span>
+        <svg class="ic" viewBox="0 0 56 56" fill="none"><rect x="10" y="12" width="36" height="32" rx="8" fill="#e3a54a"/><circle cx="28" cy="28" r="9" fill="#fff"/><circle cx="28" cy="28" r="5" fill="#f2b632"/></svg>
+        <h3>Egg danish</h3><p>A savory favorite on a crisp, buttery pastry base.</p></div>
+      <div class="item">
+        <svg class="ic" viewBox="0 0 56 56" fill="none"><path d="M6 36c4-14 12-22 22-22s18 8 22 22c-4 3-10 5-22 5S10 39 6 36z" fill="#d9993f"/><g fill="#2b1d16"><circle cx="20" cy="24" r="1.6"/><circle cx="28" cy="20" r="1.6"/><circle cx="36" cy="25" r="1.6"/><circle cx="24" cy="30" r="1.6"/><circle cx="33" cy="31" r="1.6"/></g><g fill="#fff"><circle cx="17" cy="30" r="1.4"/><circle cx="30" cy="26" r="1.4"/><circle cx="39" cy="30" r="1.4"/></g></svg>
+        <h3>Everything croissant</h3><p>Flaky croissant meets everything-bagel seasoning.</p></div>
+      <div class="item">
+        <svg class="ic" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="30" r="18" fill="#e3a54a"/><path d="M16 22c6-6 18-6 24 0" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="28" cy="30" r="5" fill="#c86b5a"/></svg>
+        <h3>Bomboloni</h3><p>Italian filled doughnuts, the one that started it all.</p></div>
+      <div class="item">
+        <svg class="ic" viewBox="0 0 56 56" fill="none"><path d="M10 26h36v18H10z" fill="#f1e7d8"/><path d="M10 26h36" stroke="#c86b5a" stroke-width="5"/><path d="M10 34h36" stroke="#5a3d2e" stroke-width="3"/><path d="M14 20h28l4 6H10z" fill="#c86b5a"/><circle cx="28" cy="15" r="3" fill="#c86b5a"/></svg>
+        <h3>Cakes &amp; pavlova</h3><p>Slices to enjoy here, or whole cakes for the occasion.</p></div>
+    </div>
+    <p style="margin-top:24px;color:var(--muted);font-size:15px">Plus espresso drinks, iced coffee, savory options and gluten-free choices.</p>
+  </div>
+</section>
+
+<section id="events" class="events">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Cakes &amp; events</span>
+      <h2 style="font-size:clamp(34px,4.6vw,54px);margin-top:12px">Make the occasion sweeter</h2>
+      <p style="color:var(--cocoa);font-size:18px;margin-top:14px">From birthdays to office mornings to community events, we’ll put together pastries that look as good as they taste.</p>
+      <ul>
+        <li><span>1</span><div><b>Whole cakes</b><br><span style="all:unset;color:var(--cocoa)">Love a slice? Most of our cakes are available whole for special occasions.</span></div></li>
+        <li><span>2</span><div><b>Pastry trays for events</b><br><span style="all:unset;color:var(--cocoa)">Beautifully presented assortments for meetings, parties and resident events.</span></div></li>
+        <li><span>3</span><div><b>Just ask</b><br><span style="all:unset;color:var(--cocoa)">Call your nearest café to talk through dates, quantities and favorites.</span></div></li>
+      </ul>
+      <div class="cta"><a class="btn btn-dark" href="#locations">Call your nearest café</a></div>
+    </div>
+    <div class="quote-card">
+      <p>“Their staff is incredibly friendly and professional, the presentation is absolutely stunning, and the pastries are just as delicious.”</p>
+      <cite>Google review · ordered for two resident events in Cary</cite>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Reviews</span>
+      <h2>The Triangle’s favorite European bakery</h2>
+    </div>
+    <div class="revs">
+      <div class="rev"><span class="stars">★★★★★</span><p>“Honestly, this is the best dessert place around. It feels just like being in Europe.”</p><small>Google review · Raleigh</small></div>
+      <div class="rev"><span class="stars">★★★★★</span><p>“Everything about this place is perfect: the food, the vibe, the people.”</p><small>Google review · Raleigh</small></div>
+      <div class="rev"><span class="stars">★★★★★</span><p>“Lovely variety of sweet treats and some savory options too. Coffee was delicious. Staff is very friendly.”</p><small>Google review · Cary</small></div>
+    </div>
+    <div class="chips"><span>Flaky croissants</span><span>Pavlova</span><span>Gluten-free options</span><span>Friendly staff</span><span>Great coffee</span></div>
+  </div>
+</section>
+
+<section id="locations">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Locations</span>
+      <h2>Three cafés, one bakery</h2>
+      <p>Open 7 AM every day.</p>
+    </div>
+    <div class="locs">
+      <div class="loc">
+        <span class="area">Glenwood South</span>
+        <h3>Downtown Raleigh</h3>
+        <address>911 N West St, Ste 107<br>Raleigh, NC 27603</address>
+        <div class="rating"><span class="stars">★★★★★</span> 4.7 · 1,000+ reviews</div>
+        <table><tr><td>Mon – Thu</td><td>7 AM – 6 PM</td></tr><tr><td>Fri – Sun</td><td>7 AM – 8 PM</td></tr></table>
+        <div class="actions">
+          <a class="btn btn-dark" href="tel:+19199990044">(919) 999-0044</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Paul+and+Jack+911+N+West+St+Raleigh+NC" target="_blank" rel="noopener">Directions</a>
+        </div>
+      </div>
+      <div class="loc">
+        <span class="area">Lake Pine</span>
+        <h3>Cary</h3>
+        <address>1881 Lake Pine Dr<br>Cary, NC 27511</address>
+        <div class="rating"><span class="stars">★★★★★</span> 4.8 · 290+ reviews</div>
+        <table><tr><td>Mon – Thu</td><td>7 AM – 6 PM</td></tr><tr><td>Fri – Sun</td><td>7 AM – 8 PM</td></tr></table>
+        <div class="actions">
+          <a class="btn btn-dark" href="tel:+19848847107">(984) 884-7107</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Paul+and+Jack+1881+Lake+Pine+Dr+Cary+NC" target="_blank" rel="noopener">Directions</a>
+        </div>
+      </div>
+      <div class="loc">
+        <span class="area">South Main</span>
+        <h3>Wake Forest</h3>
+        <address>2010 S Main St, #404<br>Wake Forest, NC 27587</address>
+        <div class="rating"><span class="stars">★★★★★</span> 4.8 · 1,400+ reviews</div>
+        <table><tr><td>Mon – Thu</td><td>7 AM – 6 PM</td></tr><tr><td>Fri – Sun</td><td>7 AM – 8 PM</td></tr></table>
+        <div class="actions">
+          <a class="btn btn-dark" href="tel:+19198550870">(919) 855-0870</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Paul+and+Jack+2010+S+Main+St+Wake+Forest+NC" target="_blank" rel="noopener">Directions</a>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:20px;color:var(--muted);font-size:14px">Holiday hours may differ.</p>
+  </div>
+</section>
+
+<section class="insta">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--butter)">@paulandjack_nc</span>
+    <h2 style="margin-top:12px">See what’s in the case today</h2>
+    <p>New bakes, seasonal specials and behind-the-scenes, shared daily with 120K+ followers.</p>
+    <a class="btn" href="https://www.instagram.com/paulandjack_nc" target="_blank" rel="noopener">Follow on Instagram</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Paul &amp; Jack · Raleigh · Cary · Wake Forest, NC</span>
+    <span>Concept design preview</span>
+  </div>
+</footer>
+</body>
+</html>
