@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Michoacana Bakery | Mexican Bakery &amp; Tres Leches in Cary, NC</title>
+<meta name="description" content="Fresh pan dulce, famous tres leches cake, choco flan, empanadas and celebration cakes. Mexican bakery in Mayfair Shopping Plaza, Cary NC. Open 8 AM to 9 PM daily.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#fff4e6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fff4e6; --cream-2:#fbe8d0; --white:#fffbf5;
+  --cocoa:#3b2119; --cocoa-2:#6b4436; --muted:#977565;
+  --terra:#c8553d; --terra-2:#b0442e; --gold:#f2a531; --rosa:#e86a96; --teal:#1f6f6b; --line:#efd9bf;
+  --radius:26px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",system-ui,sans-serif;background:var(--cream);color:var(--cocoa);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.disp{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.035em;line-height:.95}
+.ser{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--terra)}
+.tag::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--gold);transform:rotate(45deg)}
+
+.concept{background:var(--cocoa);color:#e8d2c2;font-size:12.5px;text-align:center;padding:8px 16px}
+.concept b{color:#fff}
+
+/* papel picado */
+.picado{position:relative;height:84px;overflow:hidden;pointer-events:none}
+.picado svg{position:absolute;top:0;left:50%;transform:translateX(-50%);width:max(1600px,100%);height:84px}
+.flag{transform-origin:top center;animation:sway 3.6s ease-in-out infinite}
+.flag:nth-child(2n){animation-delay:-1.2s}.flag:nth-child(3n){animation-delay:-2.1s}
+@keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+
+header{position:sticky;top:0;z-index:50;background:rgba(255,244,230,.88);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.scrolled{border-color:var(--line)}
+header .wrap{height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo b{display:block;font-family:"Bricolage Grotesque";font-weight:800;font-size:22px;letter-spacing:-.03em;line-height:1}
+.logo small{display:block;font-family:"Instrument Serif";font-style:italic;font-size:15px;color:var(--terra);margin-top:2px}
+nav ul{display:flex;gap:30px;list-style:none;font-size:15px;font-weight:500}
+nav a{text-decoration:none;color:var(--cocoa-2)}
+nav a:hover{color:var(--terra)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:999px;font:700 15px "DM Sans",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px) rotate(-1deg)}
+.btn-terra{background:var(--terra);color:#fff;box-shadow:0 6px 0 var(--terra-2)}
+.btn-terra:hover{box-shadow:0 8px 0 var(--terra-2)}
+.btn-ghost{background:var(--white);color:var(--cocoa);border:2px solid var(--cocoa);box-shadow:0 6px 0 var(--cocoa)}
+.btn-gold{background:var(--gold);color:var(--cocoa);box-shadow:0 6px 0 #c9831a}
+
+/* hero */
+.hero{padding:30px 0 110px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(54px,7.2vw,108px);margin:22px 0 26px}
+.hero h1 .ser{color:var(--terra);font-size:1.08em}
+.hero h1 .hl{position:relative;display:inline-block;white-space:nowrap}
+.hero h1 .hl svg{position:absolute;left:-4%;bottom:-.1em;width:108%;height:.38em;z-index:-1}
+.hero h1 .hl path{stroke-dasharray:600;stroke-dashoffset:600;animation:ink 1.2s .7s ease-out forwards}
+@keyframes ink{to{stroke-dashoffset:0}}
+.hero .lead{font-size:19px;color:var(--cocoa-2);max-width:500px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+.open-pill{display:inline-flex;align-items:center;gap:10px;margin-top:34px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-weight:700;font-size:14px}
+.open-pill i{width:9px;height:9px;border-radius:50%;background:#2fae66;box-shadow:0 0 0 4px rgba(47,174,102,.2)}
+.open-pill.off i{background:var(--terra);box-shadow:0 0 0 4px rgba(200,85,61,.2)}
+.open-pill span{font-weight:500;color:var(--muted)}
+.h-art{position:relative;height:620px}
+.h-main{position:absolute;inset:0 30px 40px 40px;border-radius:var(--radius);overflow:hidden;transform:rotate(2deg);box-shadow:0 40px 70px -35px rgba(59,33,25,.6);border:10px solid var(--white)}
+.h-main img{width:100%;height:100%;object-fit:cover}
+.h-round{position:absolute;left:-10px;bottom:0;width:210px;height:210px;border-radius:50%;overflow:hidden;border:10px solid var(--white);box-shadow:0 30px 50px -25px rgba(59,33,25,.6);animation:bob 6s ease-in-out infinite}
+.h-round img{width:100%;height:100%;object-fit:cover}
+@keyframes bob{50%{transform:translateY(-12px) rotate(-3deg)}}
+.sticker{position:absolute;right:-4px;top:30px;width:170px;height:170px;border-radius:50%;background:var(--rosa);color:#fff;display:grid;place-items:center;text-align:center;transform:rotate(10deg);box-shadow:0 20px 40px -20px rgba(232,106,150,.8);animation:wob 5s ease-in-out infinite}
+@keyframes wob{50%{transform:rotate(-4deg) scale(1.04)}}
+.sticker b{display:block;font-family:"Bricolage Grotesque";font-size:54px;font-weight:800;line-height:.9}
+.sticker span{font-size:13px;font-weight:700;line-height:1.2;display:block;padding:0 22px}
+.sticker::before{content:"";position:absolute;inset:8px;border-radius:50%;border:2px dashed rgba(255,255,255,.6)}
+
+/* marquee */
+.marquee{background:var(--teal);color:#fff;overflow:hidden;padding:18px 0;transform:rotate(-1.5deg);margin:0 -20px;position:relative;z-index:2}
+.mtrack{display:flex;width:max-content;animation:marq 36s linear infinite}
+.mtrack span{font-family:"Bricolage Grotesque";font-weight:800;font-size:30px;letter-spacing:-.02em;padding:0 22px;display:flex;align-items:center;gap:44px;white-space:nowrap}
+.mtrack span::after{content:"✿";color:var(--gold);font-size:24px}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* stats */
+.stats{padding:100px 0 40px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sbox{background:var(--white);border:2px solid var(--cocoa);border-radius:22px;padding:26px 24px;box-shadow:6px 6px 0 var(--cocoa);transition:transform .2s,box-shadow .2s}
+.sbox:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--cocoa)}
+.sbox:nth-child(1){background:#ffe3b3}.sbox:nth-child(2){background:#ffd6e4}.sbox:nth-child(3){background:#d6efe9}.sbox:nth-child(4){background:#ffd9cc}
+.sbox b{display:block;font-family:"Bricolage Grotesque";font-size:56px;font-weight:800;line-height:1;letter-spacing:-.04em}
+.sbox small{font-size:14px;font-weight:500;color:var(--cocoa-2)}
+
+.pad{padding:120px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:50px;flex-wrap:wrap}
+.head h2{font-size:clamp(44px,5.8vw,84px);margin-top:16px}
+.head h2 .ser{color:var(--terra)}
+.head p{color:var(--cocoa-2);max-width:420px;font-size:17px}
+
+/* spotlight */
+.spot{background:var(--cocoa);color:var(--cream);border-radius:48px;margin:0 16px;padding:110px 0;position:relative;overflow:hidden}
+.spot::before{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(242,165,49,.25),transparent 65%)}
+.spot-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;position:relative}
+.spot .tag{color:var(--gold)}
+.spot h2{font-size:clamp(48px,6vw,96px);margin:18px 0 22px}
+.spot h2 .ser{color:var(--gold)}
+.spot p.lead{color:#e6cfc0;font-size:18px;max-width:480px}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:34px 0}
+.why div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px}
+.why b{display:block;font-family:"Bricolage Grotesque";font-size:20px;letter-spacing:-.02em}
+.why small{color:#d5bdae;font-size:14px}
+.spot-img{position:relative;height:560px}
+.spot-img figure{position:absolute;overflow:hidden;border-radius:var(--radius)}
+.spot-img img{width:100%;height:100%;object-fit:cover}
+.si-1{inset:0 0 80px 60px}
+.si-2{width:240px;height:240px;left:0;bottom:0;border-radius:50%!important;border:8px solid var(--cocoa)}
+.quote-bubble{position:absolute;right:20px;bottom:20px;max-width:280px;background:var(--gold);color:var(--cocoa);border-radius:22px 22px 4px 22px;padding:18px 20px;font-family:"Instrument Serif";font-style:italic;font-size:21px;line-height:1.2;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.quote-bubble small{display:block;font-family:"DM Sans";font-style:normal;font-size:12px;margin-top:6px;opacity:.75}
+
+/* showcase */
+.tabs{display:inline-flex;gap:8px;flex-wrap:wrap}
+.tabs button{border:2px solid var(--cocoa);background:var(--white);color:var(--cocoa);font:700 15px "DM Sans";padding:11px 22px;border-radius:999px;cursor:pointer;transition:all .2s}
+.tabs button[aria-selected=true]{background:var(--cocoa);color:var(--cream);transform:rotate(-2deg)}
+.case{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.item{background:var(--white);border:2px solid var(--cocoa);border-radius:var(--radius);overflow:hidden;box-shadow:6px 6px 0 var(--cocoa);transition:transform .25s,box-shadow .25s;animation:pop .5s cubic-bezier(.2,.8,.2,1) both}
+.item:hover{transform:translate(-3px,-3px) rotate(-.6deg);box-shadow:10px 10px 0 var(--cocoa)}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.97)}}
+.item figure{aspect-ratio:4/3;overflow:hidden;border-bottom:2px solid var(--cocoa);position:relative}
+.item img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.item:hover img{transform:scale(1.07)}
+.item .lbl{position:absolute;top:14px;left:14px;background:var(--rosa);color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px}
+.item div{padding:22px 24px 26px}
+.item h3{font-family:"Bricolage Grotesque";font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.item h3 .ser{font-weight:400;color:var(--terra);font-size:.85em;display:block;letter-spacing:0}
+.item p{color:var(--cocoa-2);font-size:15px;margin-top:8px}
+
+/* celebrate */
+.cel{background:var(--cream-2)}
+.cel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cc{position:relative;border-radius:var(--radius);overflow:hidden;min-height:460px;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;color:#fff;isolation:isolate}
+.cc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s}
+.cc:hover img{transform:scale(1.06)}
+.cc::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 35%,rgba(59,33,25,.92))}
+.cc .n{position:absolute;top:22px;left:22px;width:52px;height:52px;border-radius:50%;background:var(--gold);color:var(--cocoa);display:grid;place-items:center;font-family:"Bricolage Grotesque";font-weight:800;font-size:20px}
+.cc h3{font-family:"Bricolage Grotesque";font-size:34px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.cc p{color:#f0ddd0;margin-top:10px;font-size:15.5px}
+.note-card{margin-top:22px;background:var(--white);border:2px dashed var(--terra);border-radius:22px;padding:24px 28px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.note-card svg{flex:none}
+.note-card p{flex:1;min-width:240px;font-size:17px}
+.note-card p i{font-family:"Instrument Serif";font-size:21px;color:var(--terra)}
+
+/* find us */
+.find{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:stretch}
+.find-card{background:var(--teal);color:#fff;border-radius:var(--radius);padding:44px;position:relative;overflow:hidden}
+.find-card::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;border:2px dashed rgba(255,255,255,.25)}
+.find-card .tag{color:var(--gold)}
+.find-card h2{font-size:clamp(40px,4.6vw,66px);margin:16px 0 18px}
+.find-card h2 .ser{color:var(--gold)}
+.find-card > p{color:#d4ecea;font-size:17px}
+.route{list-style:none;margin:28px 0;display:grid;gap:12px;counter-reset:r}
+.route li{display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;background:rgba(255,255,255,.08);border-radius:16px;padding:14px 16px}
+.route li::before{counter-increment:r;content:counter(r);width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--cocoa);display:grid;place-items:center;font-weight:800}
+.hours{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:28px}
+.hours div{text-align:center;padding:10px 0;border-radius:12px;background:rgba(255,255,255,.1);font-size:12px}
+.hours div b{display:block;font-size:13px}
+.hours div.today{background:var(--gold);color:var(--cocoa)}
+.find-actions{display:flex;gap:12px;flex-wrap:wrap}
+.mapbox{border-radius:var(--radius);overflow:hidden;border:2px solid var(--cocoa);position:relative;min-height:540px;box-shadow:8px 8px 0 var(--cocoa)}
+.mapbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* reviews */
+.rv-top{display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;margin-bottom:50px}
+.score b{font-family:"Bricolage Grotesque";font-size:150px;font-weight:800;line-height:.8;letter-spacing:-.06em}
+.stars{color:var(--gold);letter-spacing:3px;font-size:22px}
+.bars{display:grid;gap:10px;max-width:520px}
+.bar{display:grid;grid-template-columns:24px 1fr 40px;gap:12px;align-items:center;font-weight:700;font-size:14px}
+.bar span{height:12px;border-radius:999px;background:var(--white);border:2px solid var(--cocoa);overflow:hidden}
+.bar span i{display:block;height:100%;width:0;background:var(--terra);transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.wall{columns:3;column-gap:20px}
+.rv{break-inside:avoid;margin-bottom:20px;background:var(--white);border:2px solid var(--cocoa);border-radius:22px;padding:26px;box-shadow:5px 5px 0 var(--cocoa)}
+.rv:nth-child(3n+1){background:#fff1dc}.rv:nth-child(3n+2){background:#ffe8ef}
+.rv p{font-size:17px;line-height:1.5;margin:10px 0 14px}
+.rv small{font-weight:700;font-size:13px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chips span{background:var(--white);border:2px solid var(--cocoa);border-radius:999px;padding:7px 16px;font-size:14px;font-weight:700}
+.chips b{color:var(--terra);margin-left:6px}
+
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.faq h2{font-size:clamp(44px,5.4vw,80px);margin-top:16px}
+.faq h2 .ser{color:var(--terra)}
+.faq details{background:var(--white);border:2px solid var(--cocoa);border-radius:20px;padding:22px 26px;margin-bottom:14px;transition:box-shadow .2s}
+.faq details[open]{box-shadow:5px 5px 0 var(--cocoa)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-family:"Bricolage Grotesque";font-size:21px;font-weight:700;letter-spacing:-.02em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font-size:20px;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--cocoa-2);margin-top:12px;font-size:16px}
+
+.final{position:relative;isolation:isolate;overflow:hidden;text-align:center;color:#fff;padding:150px 0;margin-top:40px}
+.final img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.final::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(59,33,25,.55),rgba(200,85,61,.85))}
+.final h2{font-size:clamp(52px,8vw,124px)}
+.final h2 .ser{color:var(--gold)}
+.final p{font-size:19px;margin:16px auto 36px;max-width:520px;opacity:.92}
+
+footer{background:var(--cocoa);color:#d7bfb1;padding:70px 0 36px;font-size:14.5px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.fgrid h4{color:#fff;font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+.fgrid ul{list-style:none;display:grid;gap:8px}
+.fgrid a{text-decoration:none}
+.fgrid a:hover{color:#fff}
+.fbot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:50px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:#a88c7c}
+
+.mcall{display:none}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero h1 .hl path{stroke-dashoffset:0}}
+
+@media (max-width:1020px){
+  nav ul{display:none}
+  .hero-grid,.spot-grid,.find,.faq{grid-template-columns:1fr}
+  .h-art{height:520px;max-width:540px;width:100%;margin:0 auto}
+  .sgrid{grid-template-columns:1fr 1fr}
+  .case,.cel-grid{grid-template-columns:1fr 1fr}
+  .wall{columns:2}
+  .rv-top{grid-template-columns:1fr;gap:24px}
+  .pad{padding:90px 0}
+  .spot{padding:90px 0;margin:0 8px;border-radius:32px}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .mapbox{min-height:380px}
+}
+@media (max-width:620px){
+  .wrap{padding:0 16px}
+  header .btn{display:none}
+  .picado{height:60px}.picado svg{height:60px}
+  .h-art{height:420px}
+  .h-main{inset:0 10px 40px 20px}
+  .h-round{width:140px;height:140px}
+  .sticker{width:124px;height:124px;right:0;top:10px}
+  .sticker b{font-size:38px}.sticker span{font-size:11px;padding:0 14px}
+  .case,.cel-grid{grid-template-columns:1fr}
+  .wall{columns:1}
+  .why{grid-template-columns:1fr}
+  .spot-img{height:420px}
+  .si-1{inset:0 0 70px 30px}
+  .si-2{width:170px;height:170px}
+  .quote-bubble{max-width:210px;font-size:17px}
+  .find-card{padding:28px}
+  .hours div{font-size:10.5px}
+  .score b{font-size:110px}
+  .fgrid{grid-template-columns:1fr}
+  .mcall{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:70}
+  footer{padding-bottom:100px}
+  .sbox b{font-size:42px}
+}
+</style>
+</head>
+<body>
+
+<div class="concept"><b>Website concept</b> — a free sample design made for La Michoacana Bakery. Not affiliated with the business. Photos are stock placeholders.</div>
+
+<div class="picado" aria-hidden="true">
+  <svg viewBox="0 0 1600 84" preserveAspectRatio="xMidYMin slice" id="picado"></svg>
+</div>
+
+<header id="hdr">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="La Michoacana Bakery home">
+      <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#c8553d"/><path d="M10 28c0-8 6-14 14-14s14 6 14 14c-3 3-8 4-14 4s-11-1-14-4z" fill="#ffd9a8"/><path d="M14 22c3 2 6 2 10 0s7-2 10 0M13 26c4 2 7 2 11 0s7-2 11 0M17 18c2 1.5 5 1.5 7 0s5-1.5 7 0" stroke="#e86a96" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <span><b>La Michoacana</b><small>panadería mexicana</small></span>
+    </a>
+    <nav><ul><li><a href="#tresleches">Tres leches</a></li><li><a href="#case">Pan dulce</a></li><li><a href="#cakes">Cakes</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#find">Find us</a></li></ul></nav>
+    <a class="btn btn-terra" href="tel:+19194690456">(919) 469-0456</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Mexican bakery · Cary, NC</span>
+      <h1 class="disp">Fresh pan dulce &amp; <span class="hl">tres leches<svg viewBox="0 0 300 30" preserveAspectRatio="none"><path d="M4 20 C 60 6, 140 28, 296 10" stroke="#f2a531" stroke-width="14" fill="none" stroke-linecap="round"/></svg></span> <span class="ser">baked every day.</span></h1>
+      <p class="lead">Moist, milky tres leches cake, warm conchas, choco flan, empanadas and celebration cakes, all at prices that keep you coming back. Find us in Mayfair Shopping Plaza.</p>
+      <div class="cta">
+        <a class="btn btn-terra" href="tel:+19194690456">Call to order a cake</a>
+        <a class="btn btn-ghost" href="#find">How to find us</a>
+      </div>
+      <div class="open-pill" id="openPill"><i></i><b id="openTxt">Open today</b><span id="openSub">8 AM – 9 PM</span></div>
+    </div>
+    <div class="h-art">
+      <div class="h-main"><img src="https://images.unsplash.com/photo-1718749131449-429a252b3b42?auto=format&fit=crop&w=1100&q=80" alt="A bakery display full of fresh breads and pastries"></div>
+      <div class="h-round"><img src="https://images.unsplash.com/photo-1617859047277-9f47d2bd9696?auto=format&fit=crop&w=500&q=80" alt="A concha on a white plate"></div>
+      <div class="sticker"><div><b>53+</b><span>reviews rave about our tres leches</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="mtrack">
+  <span>Tres leches</span><span>Pan dulce</span><span>Conchas</span><span>Choco flan</span><span>Empanadas</span><span>Birthday cakes</span><span>Wedding cakes</span><span>Chantilly cream</span>
+  <span>Tres leches</span><span>Pan dulce</span><span>Conchas</span><span>Choco flan</span><span>Empanadas</span><span>Birthday cakes</span><span>Wedding cakes</span><span>Chantilly cream</span>
+</div></div>
+
+<section class="stats">
+  <div class="wrap sgrid">
+    <div class="sbox reveal"><b><span data-count="4.6" data-dec="1">0</span>★</b><small>Google rating</small></div>
+    <div class="sbox reveal d1"><b data-count="268">0</b><small>Reviews from neighbors</small></div>
+    <div class="sbox reveal d2"><b>8–9</b><small>Open 8 AM to 9 PM</small></div>
+    <div class="sbox reveal d3"><b data-count="7">0</b><small>Days a week</small></div>
+  </div>
+</section>
+
+<section class="pad" id="tresleches" style="padding-top:60px">
+  <div class="spot">
+    <div class="wrap spot-grid">
+      <div>
+        <span class="tag reveal">The famous one</span>
+        <h2 class="disp reveal d1">Our tres leches <span class="ser">cake.</span></h2>
+        <p class="lead reveal d2">Soaked in three milks, finished with light Chantilly cream, and cut into generous slices. It’s the cake people drive across town for, order for weddings, and bring to every birthday.</p>
+        <div class="why reveal d2">
+          <div><b>Moist &amp; milky</b><small>The word reviewers use most</small></div>
+          <div><b>Thick slices</b><small>Fresh and generous</small></div>
+          <div><b>Chantilly cream</b><small>Light, not too heavy</small></div>
+          <div><b>Great price</b><small>“Deserve to sell for more”</small></div>
+        </div>
+        <a class="btn btn-gold reveal d3" href="tel:+19194690456">Order a whole cake</a>
+      </div>
+      <div class="spot-img reveal d1">
+        <figure class="si-1"><img loading="lazy" src="https://images.unsplash.com/photo-1673974798330-23e8f4c9ae05?auto=format&fit=crop&w=1000&q=80" alt="A slice of milk-soaked sponge cake with raspberries"></figure>
+        <figure class="si-2"><img loading="lazy" src="https://images.unsplash.com/photo-1783471523755-637074ae4d19?auto=format&fit=crop&w=500&q=80" alt="Cake with whipped cream and strawberries"></figure>
+        <div class="quote-bubble" id="bubble">“The tres leches cake slices were thick and absolutely fresh.”<small>Google review</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="case" style="padding-top:30px">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="tag reveal">La vitrina</span><h2 class="disp reveal d1">What’s in <span class="ser">the case</span></h2></div>
+      <div class="tabs reveal d2" role="tablist" aria-label="Bakery categories">
+        <button role="tab" aria-selected="true" data-c="pan">Pan dulce</button>
+        <button role="tab" aria-selected="false" data-c="postres">Postres</button>
+        <button role="tab" aria-selected="false" data-c="salado">To share</button>
+      </div>
+    </div>
+    <div class="case" id="caseGrid" role="tabpanel"></div>
+  </div>
+</section>
+
+<section class="pad cel" id="cakes">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="tag reveal">Celebrations</span><h2 class="disp reveal d1">Cakes for <span class="ser">every fiesta</span></h2></div>
+      <p class="reveal d2">Birthdays, weddings and everything in between. Call ahead to order, or stop in and pick one from the case.</p>
+    </div>
+    <div class="cel-grid">
+      <article class="cc reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1741969494234-7d4bcd1002ab?auto=format&fit=crop&w=900&q=80" alt="A colorful decorated birthday cake"><span class="n">01</span><h3>Birthday cakes</h3><p>The cake regulars order “for everyone’s birthday parties,” decorated and ready to celebrate.</p></article>
+      <article class="cc reveal d1"><img loading="lazy" src="https://images.unsplash.com/photo-1559373098-e1caaccae791?auto=format&fit=crop&w=900&q=80" alt="A three-tier white wedding cake with flowers"><span class="n">02</span><h3>Wedding cakes</h3><p>Couples have chosen our tres leches for their wedding day. Call to talk through sizes and styles.</p></article>
+      <article class="cc reveal d2"><img loading="lazy" src="https://images.unsplash.com/photo-1783471523755-637074ae4d19?auto=format&fit=crop&w=900&q=80" alt="Cake with cream and strawberries"><span class="n">03</span><h3>Just because</h3><p>Whole tres leches cakes and slices are in the case daily for any day that needs something sweet.</p></article>
+    </div>
+    <div class="note-card reveal">
+      <svg width="54" height="54" viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="26" fill="#e86a96"/><path d="M17 33l14-14 4 4-14 14h-4z" fill="#fff"/><path d="M29 21l4 4" stroke="#e86a96" stroke-width="2"/></svg>
+      <p><i>Need a cake tonight?</i> Ask about writing a name or message on a fresh cake from the case. One reviewer got a cake personalized for her mom the same evening.</p>
+      <a class="btn btn-terra" href="tel:+19194690456">Call (919) 469-0456</a>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="reviews">
+  <div class="wrap">
+    <div class="rv-top">
+      <div class="score reveal"><span class="tag">Reviews</span><div style="margin-top:16px"><b>4.6</b></div><div class="stars">★★★★★</div><small style="color:var(--muted);font-weight:700">268 Google reviews</small></div>
+      <div class="bars reveal d1" id="bars">
+        <div class="bar">5<span><i data-w="77"></i></span>206</div>
+        <div class="bar">4<span><i data-w="13"></i></span>36</div>
+        <div class="bar">3<span><i data-w="4"></i></span>10</div>
+        <div class="bar">2<span><i data-w="2"></i></span>5</div>
+        <div class="bar">1<span><i data-w="4"></i></span>11</div>
+      </div>
+    </div>
+    <div class="wall">
+      <article class="rv reveal"><span class="stars">★★★★★</span><p>“An absolute must visit, especially for anyone that likes sweets. The choco flan and tres leches are what dreams are made of, and the pan dulce never disappoints.”</p><small>Google review</small></article>
+      <article class="rv reveal d1"><span class="stars">★★★★★</span><p>“Me and my coworkers love going in to purchase all the delicious baked goods. We smell them baking every single day. The price of everything is extremely reasonable.”</p><small>Google review · works around the corner</small></article>
+      <article class="rv reveal d2"><span class="stars">★★★★★</span><p>“Ordered tres leches for my wedding, the best cake I ever had!”</p><small>Google review</small></article>
+      <article class="rv reveal"><span class="stars">★★★★★</span><p>“They were super kind. Had to get a cake done for my mother tonight, and they had fresh ones made and just put the words on it for me.”</p><small>Google review</small></article>
+      <article class="rv reveal d1"><span class="stars">★★★★★</span><p>“Have been coming here since 2020, and it’s still my favorite place to get tres leches cake!”</p><small>Google review · regular</small></article>
+      <article class="rv reveal d2"><span class="stars">★★★★★</span><p>“Very flavorful, moist and great for the price.”</p><small>Google review</small></article>
+      <article class="rv reveal"><span class="stars">★★★★★</span><p>“I always get my cakes from here for everyone’s birthday parties, because everyone always loves them.”</p><small>Google review</small></article>
+      <article class="rv reveal d1"><span class="stars">★★★★★</span><p>“Great place to get authentic Mexican baked goods, cheap and a really nice place.”</p><small>Google review</small></article>
+      <article class="rv reveal d2"><span class="stars">★★★★★</span><p>“I would have driven right by this place. The staff were friendly and helpful.”</p><small>Google review · first visit</small></article>
+    </div>
+    <div class="chips reveal"><span>Tres leches cake<b>60+</b></span><span>Moistness<b>3</b></span><span>Wedding cake<b>2</b></span><span>Birthday cakes<b>2</b></span><span>Empanadas<b>2</b></span><span>Chantilly cream<b>2</b></span></div>
+  </div>
+</section>
+
+<section class="pad" id="find" style="padding-top:20px">
+  <div class="wrap find">
+    <div class="find-card reveal">
+      <span class="tag">Find us</span>
+      <h2 class="disp">Easy to miss, <span class="ser">worth finding.</span></h2>
+      <p>First-timers say we’re a little hard to spot. Here’s how to find us:</p>
+      <ol class="route">
+        <li><span>Head to <b>114 SW Maynard Rd</b> in Cary</span></li>
+        <li><span>Turn into <b>Mayfair Shopping Plaza</b></span></li>
+        <li><span>Look for <b>La Michoacana</b> and follow the smell of fresh pan dulce</span></li>
+      </ol>
+      <div class="hours" id="week"></div>
+      <div class="find-actions">
+        <a class="btn btn-gold" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Michoacana+Bakery+114+SW+Maynard+Rd+Cary+NC">Get directions</a>
+        <a class="btn btn-ghost" href="tel:+19194690456">Call us</a>
+      </div>
+    </div>
+    <div class="mapbox reveal d1"><iframe title="Map to La Michoacana Bakery" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=La%20Michoacana%20Bakery%2C%20114%20SW%20Maynard%20Rd%2C%20Cary%2C%20NC%2027511&amp;z=16&amp;output=embed"></iframe></div>
+  </div>
+</section>
+
+<section class="pad" id="faq" style="padding-top:30px">
+  <div class="wrap faq">
+    <div><span class="tag reveal">Preguntas</span><h2 class="disp reveal d1">Questions? <span class="ser">We’ve got answers.</span></h2></div>
+    <div class="reveal d1">
+      <details open><summary>Can I order a whole tres leches cake?</summary><p>Yes. Whole cakes are often in the case, and you can call (919) 469-0456 to order ahead for birthdays, weddings and parties.</p></details>
+      <details><summary>Can you write a name or message on a cake?</summary><p>Ask when you call or visit. We can add a message to a fresh cake so it’s ready to celebrate.</p></details>
+      <details><summary>Do you do wedding cakes?</summary><p>Couples have ordered our tres leches for their weddings. Call to talk about size, style and timing.</p></details>
+      <details><summary>What are your hours?</summary><p>8 AM to 9 PM, every day of the week. Holiday hours may differ.</p></details>
+      <details><summary>Do you offer takeout or delivery?</summary><p>Takeout, of course, and delivery is available too. Call for details.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <img loading="lazy" src="https://images.unsplash.com/photo-1604908552986-eb22824b2150?auto=format&fit=crop&w=2000&q=70" alt="">
+  <div class="wrap">
+    <h2 class="disp reveal">Something sweet <span class="ser">is waiting.</span></h2>
+    <p class="reveal d1">Stop by Mayfair Shopping Plaza any day from 8 AM to 9 PM, or call ahead to order your cake.</p>
+    <a class="btn btn-gold reveal d2" href="tel:+19194690456">Call (919) 469-0456</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><b style="font-family:'Bricolage Grotesque';font-size:26px;color:#fff;letter-spacing:-.03em">La Michoacana</b><p style="font-family:'Instrument Serif';font-style:italic;font-size:18px;color:var(--gold)">panadería mexicana</p><p style="max-width:300px;margin-top:10px">Fresh pan dulce and famous tres leches in Cary, North Carolina.</p></div>
+      <div><h4>Bakery</h4><ul><li><a href="#tresleches">Tres leches</a></li><li><a href="#case">Pan dulce</a></li><li><a href="#cakes">Celebration cakes</a></li><li><a href="#reviews">Reviews</a></li></ul></div>
+      <div><h4>Visit</h4><ul><li>114 SW Maynard Rd</li><li>Mayfair Shopping Plaza</li><li>Cary, NC 27511</li></ul></div>
+      <div><h4>Hours &amp; contact</h4><ul><li>Daily 8 AM – 9 PM</li><li><a href="tel:+19194690456">(919) 469-0456</a></li></ul></div>
+    </div>
+    <div class="fbot"><span>© 2026 La Michoacana Bakery</span><span>Concept design preview · Stock photos via Unsplash</span></div>
+  </div>
+</footer>
+
+<a class="btn btn-terra mcall" href="tel:+19194690456">Call (919) 469-0456</a>
+
+<script>
+(function(){
+  var U='https://images.unsplash.com/photo-',Q='?auto=format&fit=crop&w=800&h=600&q=78';
+  var hdr=document.getElementById('hdr');window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>10)},{passive:true});
+
+  // papel picado
+  var svg=document.getElementById('picado'),cols=['#e86a96','#f2a531','#1f6f6b','#c8553d','#7b5cc4','#2fae66'],h='<path d="M0 6 Q800 26 1600 6" stroke="#3b2119" stroke-width="2" fill="none"/>';
+  for(var i=0;i<32;i++){var x=i*50+6,y=6+20*Math.sin(Math.PI*(x/1600)),c=cols[i%cols.length];
+    h+='<g class="flag" style="transform-origin:'+(x+19)+'px '+y+'px"><path d="M'+x+' '+y+'h38v44l-6-6-6 6-7-6-7 6-6-6-6 6z" fill="'+c+'"/><circle cx="'+(x+19)+'" cy="'+(y+16)+'" r="6" fill="#fff4e6"/><path d="M'+(x+8)+' '+(y+30)+'l5-5 6 5 6-5 5 5" stroke="#fff4e6" stroke-width="2.4" fill="none"/></g>'}
+  svg.innerHTML=h;
+
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12}):null;
+  document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('on')});
+  function run(el){var to=+el.dataset.count,dec=+(el.dataset.dec||0),s=null;function f(ts){if(!s)s=ts;var p=Math.min((ts-s)/1400,1);el.textContent=(to*(1-Math.pow(1-p,3))).toFixed(dec);if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+  var cio='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run(e.target);cio.unobserve(e.target)}})},{threshold:.5}):null;
+  document.querySelectorAll('[data-count]').forEach(function(el){cio?cio.observe(el):(el.textContent=el.dataset.count)});
+
+  var bars=document.getElementById('bars');
+  var bio='IntersectionObserver' in window?new IntersectionObserver(function(es){if(es[0].isIntersecting){bars.querySelectorAll('i').forEach(function(i){i.style.width=i.dataset.w+'%'});bio.disconnect()}},{threshold:.4}):null;
+  bio?bio.observe(bars):bars.querySelectorAll('i').forEach(function(i){i.style.width=i.dataset.w+'%'});
+
+  // rotating quote bubble
+  var Qs=[['“The tres leches cake slices were thick and absolutely fresh.”','Google review'],['“Very flavorful, moist and great for the price.”','Google review'],['“Still my favorite place to get tres leches cake!”','Regular since 2020'],['“The best cake I ever had.”','Ordered for their wedding']],qi=0,bub=document.getElementById('bubble');
+  setInterval(function(){qi=(qi+1)%Qs.length;bub.style.opacity=0;setTimeout(function(){bub.innerHTML=Qs[qi][0]+'<small>'+Qs[qi][1]+'</small>';bub.style.opacity=1},300)},4500);
+  bub.style.transition='opacity .3s';
+
+  // case tabs
+  var C={
+    pan:[
+      {n:'Conchas',s:'the classic',d:'Soft sweet bread with a crackly sugar-shell topping.',i:'1617859047277-9f47d2bd9696',l:'Favorite'},
+      {n:'Pan dulce',s:'a little of everything',d:'A daily assortment of Mexican sweet breads, baked fresh in-house.',i:'1568254183919-78a4f43a2877',l:'Daily'},
+      {n:'Fresh from the oven',s:'smell it from the lot',d:'Neighbors say you can smell the baking every single day.',i:'1608198093002-ad4e005484ec',l:''}
+    ],
+    postres:[
+      {n:'Tres leches',s:'the famous one',d:'Soaked in three milks with light Chantilly cream. By the slice or whole.',i:'1673974798330-23e8f4c9ae05',l:'Most loved'},
+      {n:'Choco flan',s:'“what dreams are made of”',d:'Chocolate cake and silky flan in one, with caramel on top.',i:'1780798465831-de1e4d58ee46',l:'Popular'},
+      {n:'Celebration cakes',s:'for every fiesta',d:'Birthday and party cakes, decorated and ready to go.',i:'1741969494234-7d4bcd1002ab',l:''}
+    ],
+    salado:[
+      {n:'Empanadas',s:'golden &amp; flaky',d:'Hand-folded pastries, perfect for a quick bite.',i:'1769254870299-338bfd99aabd',l:'Popular'},
+      {n:'Whole tres leches',s:'to share',d:'Take a whole cake home for the family, ready to slice.',i:'1783471523755-637074ae4d19',l:''},
+      {n:'A box for the office',s:'coworkers will thank you',d:'Pick up a mix of pan dulce for the team, family or guests.',i:'1604908552986-eb22824b2150',l:''}
+    ]};
+  var grid=document.getElementById('caseGrid');
+  function show(c){grid.innerHTML=C[c].map(function(x,k){return '<article class="item" style="animation-delay:'+(k*.08)+'s"><figure><img loading="lazy" src="'+U+x.i+Q+'" alt="">'+(x.l?'<span class="lbl">'+x.l+'</span>':'')+'</figure><div><h3><span class="ser">'+x.s+'</span>'+x.n+'</h3><p>'+x.d+'</p></div></article>'}).join('')}
+  document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});show(b.dataset.c)})});
+  show('pan');
+
+  // hours / open status
+  try{var now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'})),d=now.getDay(),hr=now.getHours()+now.getMinutes()/60,open=hr>=8&&hr<21;
+    document.getElementById('openTxt').textContent=open?'Open now':'Closed now';
+    document.getElementById('openSub').textContent=open?'until 9 PM today':(hr<8?'opens 8 AM today':'opens 8 AM tomorrow');
+    if(!open)document.getElementById('openPill').classList.add('off');
+    var names=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],wk=document.getElementById('week');
+    [1,2,3,4,5,6,0].forEach(function(i){var el=document.createElement('div');if(i===d)el.className='today';el.innerHTML='<b>'+names[i]+'</b>8–9';wk.appendChild(el)});
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
