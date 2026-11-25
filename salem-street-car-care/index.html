@@ -4,287 +4,636 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Salem Street Car Care Center | Auto Repair in Downtown Apex, NC</title>
-<meta name="description" content="Honest, fast auto repair in downtown Apex, NC. Brakes, inspections, AC, alignments and more. Rated 4.9 stars by 490+ local drivers. Call (919) 303-0131.">
+<meta name="description" content="Honest, fast auto repair in downtown Apex, NC. Brakes, NC inspections, AC, alignments and more. Rated 4.9 stars by 490+ local drivers. Call (919) 303-0131.">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#0d1014">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#14181f; --ink-2:#3b4452; --muted:#6b7480;
-  --paper:#f6f3ee; --card:#ffffff; --line:#e4dfd6;
-  --brick:#b5452b; --brick-dark:#8f3420; --navy:#1b2a3a; --gold:#e0a530;
+  --bg:#0d1014; --bg-2:#141920; --bg-3:#1b222b; --line:rgba(255,255,255,.09);
+  --text:#eef1f4; --dim:#9aa5b1; --dim-2:#6d7884;
+  --accent:#ff6b2c; --accent-2:#ff8a50; --accent-ink:#1a0d06;
+  --paper:#f4f1ec; --ink:#14181f; --ink-dim:#5b6470;
+  --radius:18px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:Archivo,Inter,sans-serif;line-height:1.1;letter-spacing:-.01em}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
 a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.display{font-family:"Barlow Condensed",Inter,sans-serif;font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:-.005em}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.kicker::before{content:"";width:28px;height:2px;background:currentColor}
 
-.concept{background:var(--ink);color:#cfd5dd;font-size:13px;text-align:center;padding:8px 16px}
+/* concept bar */
+.concept{background:#000;color:#a9b3be;font-size:12.5px;text-align:center;padding:8px 16px;position:relative;z-index:60}
 .concept b{color:#fff}
 
-header.nav{position:sticky;top:0;z-index:20;background:rgba(246,243,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Archivo;font-weight:800;font-size:17px}
-.brand .mark{width:36px;height:36px;border-radius:8px;background:var(--brick);display:grid;place-items:center;color:#fff}
-.nav ul{display:flex;gap:28px;list-style:none;font-weight:500;font-size:15px}
-.nav ul a{text-decoration:none;color:var(--ink-2)}
-.nav ul a:hover{color:var(--brick)}
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;border-radius:10px;padding:12px 20px;font-size:15px;transition:transform .15s,background .15s}
-.btn:hover{transform:translateY(-1px)}
-.btn-primary{background:var(--brick);color:#fff}
-.btn-primary:hover{background:var(--brick-dark)}
-.btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff}
-.btn-ghost:hover{background:rgba(255,255,255,.08)}
+/* nav */
+.nav{position:fixed;left:0;right:0;top:34px;z-index:50;transition:background .3s,top .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{top:0;background:rgba(13,16,20,.88);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{flex:none}
+.brand b{display:block;font-family:"Barlow Condensed";font-size:22px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+.brand small{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin-top:3px}
+.nav ul{display:flex;gap:30px;list-style:none;font-size:14.5px;font-weight:500}
+.nav ul a{text-decoration:none;color:#c8d0d8;transition:color .2s}
+.nav ul a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:15px;text-decoration:none;border-radius:999px;padding:14px 24px;border:0;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-accent{background:var(--accent);color:var(--accent-ink);box-shadow:0 10px 30px -10px rgba(255,107,44,.7)}
+.btn-accent:hover{background:var(--accent-2)}
+.btn-glass{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px)}
+.btn-glass:hover{background:rgba(255,255,255,.14)}
+.pulse{width:8px;height:8px;border-radius:50%;background:#2fd47a;box-shadow:0 0 0 0 rgba(47,212,122,.6);animation:pulse 2s infinite}
+.pulse.closed{background:#ff5d5d;box-shadow:none;animation:none}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(47,212,122,0)}100%{box-shadow:0 0 0 0 rgba(47,212,122,0)}}
 
-.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;inset:0;background:
-  radial-gradient(600px 300px at 85% 20%,rgba(181,69,43,.35),transparent 70%),
-  repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 2px,transparent 2px 22px);pointer-events:none}
-.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:center;padding-top:84px;padding-bottom:84px}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
-.hero h1{font-size:clamp(38px,5.6vw,62px);font-weight:800;margin:16px 0 18px}
-.hero h1 em{font-style:normal;color:var(--gold)}
-.hero p.lead{font-size:18px;color:#c9d2dc;max-width:520px}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.rating-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:28px}
-.big-score{display:flex;align-items:baseline;gap:12px}
-.big-score strong{font-family:Archivo;font-size:64px;font-weight:800;line-height:1}
-.stars{color:var(--gold);letter-spacing:2px;font-size:20px}
-.rating-card .sub{color:#aab5c2;font-size:14px;margin-top:4px}
-.rating-card blockquote{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:16px;color:#e7ecf1}
-.rating-card cite{display:block;margin-top:8px;font-style:normal;font-size:13px;color:#8e9aa8}
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;padding:180px 0 64px;isolation:isolate;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:#0d1014 url("https://images.unsplash.com/photo-1767681092416-bccf9410bda4?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;transform:scale(1.08);animation:heroZoom 18s ease-out forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,rgba(13,16,20,.55) 0%,rgba(13,16,20,.35) 35%,rgba(13,16,20,.92) 78%,#0d1014 100%),
+  linear-gradient(90deg,rgba(13,16,20,.85) 0%,rgba(13,16,20,.2) 65%)}
+.hero-grid{display:grid;grid-template-columns:1.5fr .75fr;gap:48px;align-items:end}
+.hero h1{font-size:clamp(42px,7vw,104px);margin:22px 0 24px}
+.hero h1 .line{white-space:nowrap}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line span{display:inline-block;transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 .line:nth-child(2) span{animation-delay:.12s}
+.hero h1 .line:nth-child(3) span{animation-delay:.24s}
+.hero h1 em{font-style:normal;color:var(--accent);-webkit-text-stroke:0}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.85)}
+@keyframes rise{to{transform:none}}
+.hero p.lead{font-size:clamp(17px,1.6vw,20px);color:#c7cfd8;max-width:560px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.fade-up{opacity:0;transform:translateY(20px);animation:fadeUp .9s .45s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+.status-card{background:rgba(20,25,32,.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:26px;display:grid;gap:18px}
+.status-top{display:flex;align-items:center;justify-content:space-between}
+.status-top span{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px}
+.status-top small{color:var(--dim);font-size:13px}
+.score{display:flex;align-items:center;gap:16px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.score strong{font-family:"Barlow Condensed";font-size:64px;line-height:.8;font-weight:800}
+.stars{color:#ffc23d;letter-spacing:2px;font-size:17px}
+.score small{display:block;color:var(--dim);font-size:13px}
+.status-card q{font-size:15px;color:#dfe5eb;quotes:"“" "”"}
+.status-card cite{display:flex;align-items:center;gap:8px;font-style:normal;font-size:12.5px;color:var(--dim);margin-top:8px}
+.g-dot{width:18px;height:18px;border-radius:50%;background:conic-gradient(#ea4335 0 25%,#fbbc05 0 50%,#34a853 0 75%,#4285f4 0)}
+.scroll-cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:24px;height:38px;border:2px solid rgba(255,255,255,.35);border-radius:12px}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:cue 1.6s infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
 
-.strip{background:var(--card);border-bottom:1px solid var(--line)}
-.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-top:22px;padding-bottom:22px}
-.strip div{display:flex;gap:12px;align-items:center;font-size:14px;color:var(--ink-2)}
-.strip svg{flex:none;color:var(--brick)}
-.strip b{display:block;color:var(--ink);font-size:15px}
+/* marquee */
+.marquee{background:var(--accent);color:var(--accent-ink);overflow:hidden;padding:16px 0;transform:rotate(-1.2deg);margin:-14px -10px 0;position:relative;z-index:3;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+.marquee-track{display:flex;gap:42px;width:max-content;animation:marq 32s linear infinite}
+.marquee span{font-family:"Barlow Condensed";font-weight:800;font-size:26px;text-transform:uppercase;letter-spacing:.02em;display:flex;align-items:center;gap:42px;white-space:nowrap}
+.marquee span::after{content:"";width:10px;height:10px;background:var(--accent-ink);transform:rotate(45deg)}
+@keyframes marq{to{transform:translateX(-50%)}}
 
-section{padding:88px 0}
-.sec-head{max-width:620px;margin-bottom:44px}
-.sec-head .eyebrow{color:var(--brick)}
-.sec-head h2{font-size:clamp(30px,4vw,42px);margin-top:10px}
-.sec-head p{color:var(--muted);margin-top:12px;font-size:17px}
+/* stats */
+.stats{padding:110px 0 70px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--bg-2)}
+.stat{padding:34px 30px;border-right:1px solid var(--line);position:relative}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:"Barlow Condensed";font-size:62px;font-weight:800;line-height:1;color:#fff}
+.stat b sup{font-size:.45em;color:var(--accent);vertical-align:top;margin-left:2px}
+.stat > span{color:var(--dim);font-size:14px}
 
-.services{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
-.svc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;transition:border-color .15s,box-shadow .15s}
-.svc:hover{border-color:var(--brick);box-shadow:0 8px 24px -12px rgba(20,24,31,.18)}
-.svc .ic{width:42px;height:42px;border-radius:10px;background:#f7e6e1;color:var(--brick);display:grid;place-items:center;margin-bottom:14px}
-.svc h3{font-size:18px;margin-bottom:6px}
-.svc p{font-size:14px;color:var(--muted)}
-.note{margin-top:22px;font-size:14px;color:var(--muted)}
+/* section shell */
+section{position:relative}
+.pad{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:54px}
+.head h2{font-size:clamp(44px,6vw,84px);margin-top:16px}
+.head p{color:var(--dim);max-width:420px;font-size:17px}
 
-.how{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
-.step{position:relative;padding-top:56px}
-.step::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-family:Archivo;font-weight:800;display:grid;place-items:center}
-.step h3{font-size:20px;margin-bottom:8px}
-.step p{color:var(--muted)}
+/* services bento */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(150px,auto);gap:16px}
+.tile{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--bg-2);border:1px solid var(--line);isolation:isolate;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.tile::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,16,20,.05) 20%,rgba(13,16,20,.92) 100%)}
+.tile:hover img{transform:scale(1.06)}
+.tile .num{position:absolute;top:22px;left:26px;font-family:"Barlow Condensed";font-weight:700;font-size:15px;letter-spacing:.12em;color:rgba(255,255,255,.7)}
+.tile h3{font-family:"Barlow Condensed";font-size:38px;font-weight:800;text-transform:uppercase;line-height:.95}
+.tile p{color:#c9d1d9;font-size:15px;margin-top:8px;max-width:380px}
+.tile .chip{position:absolute;top:20px;right:20px;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.15);font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px}
+.t1{grid-column:span 7;grid-row:span 2;min-height:540px}
+.t2{grid-column:span 5}
+.t3{grid-column:span 5}
+.t4{grid-column:span 4}
+.t5{grid-column:span 4}
+.t6{grid-column:span 4}
+.mini-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+.mini{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;gap:14px;align-items:center;transition:border-color .2s,transform .2s}
+.mini:hover{border-color:rgba(255,107,44,.6);transform:translateY(-3px)}
+.mini .ic{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(255,107,44,.12);color:var(--accent)}
+.mini b{display:block;font-size:15px}
+.mini small{color:var(--dim);font-size:13px}
+.svc-note{margin-top:22px;color:var(--dim-2);font-size:14px}
 
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.rev{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:14px}
-.rev p{font-size:16px}
-.rev .who{margin-top:auto;font-size:13px;color:var(--muted)}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-.tags span{background:#ece7de;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:500;color:var(--ink-2)}
+/* process (light) */
+.light{background:var(--paper);color:var(--ink)}
+.light .head p{color:var(--ink-dim)}
+.process{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+.steps{display:grid;gap:8px;counter-reset:st}
+.step{display:grid;grid-template-columns:72px 1fr;gap:20px;padding:26px 0;border-top:1px solid #ddd6cb}
+.step:last-child{border-bottom:1px solid #ddd6cb}
+.step::before{counter-increment:st;content:"0" counter(st);font-family:"Barlow Condensed";font-size:54px;font-weight:800;line-height:.9;color:var(--accent)}
+.step h3{font-family:"Barlow Condensed";font-size:30px;text-transform:uppercase;font-weight:800;line-height:1}
+.step p{color:var(--ink-dim);margin-top:8px}
+.phone{justify-self:center;width:min(340px,100%);aspect-ratio:9/18.5;background:#0d1014;border-radius:46px;padding:12px;box-shadow:0 50px 80px -30px rgba(20,24,31,.55),inset 0 0 0 2px #2a313b;position:relative}
+.phone::before{content:"";position:absolute;top:22px;left:50%;transform:translateX(-50%);width:96px;height:26px;background:#000;border-radius:20px;z-index:2}
+.screen{background:#f2f3f5;border-radius:36px;height:100%;overflow:hidden;display:flex;flex-direction:column}
+.screen-top{padding:60px 18px 14px;background:#fff;border-bottom:1px solid #e5e7eb;text-align:center}
+.screen-top .av{width:44px;height:44px;border-radius:50%;margin:0 auto 6px;background:var(--accent);display:grid;place-items:center;color:#fff;font-family:"Barlow Condensed";font-weight:800;font-size:18px}
+.screen-top b{font-size:13px;color:#111}
+.screen-top small{display:block;font-size:11px;color:#8a929c}
+.chat{flex:1;padding:16px 14px;display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.4}
+.bub{max-width:80%;padding:10px 14px;border-radius:18px;opacity:0;transform:translateY(10px) scale(.98);transition:all .5s cubic-bezier(.2,.8,.2,1)}
+.bub.in{opacity:1;transform:none}
+.them{background:#e4e6ea;color:#111;align-self:flex-start;border-bottom-left-radius:6px}
+.me{background:#1f8bff;color:#fff;align-self:flex-end;border-bottom-right-radius:6px}
+.ill{font-size:12px;color:#8a929c;text-align:center;margin-top:14px}
 
-.visit .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:stretch}
-.info{background:var(--navy);color:#fff;border-radius:18px;padding:36px}
-.info h2{font-size:34px;margin-bottom:22px}
-.info dl{display:grid;gap:18px}
-.info dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.info dd{font-size:17px;margin-top:2px}
-.info dd a{text-decoration:none}
-.hours{width:100%;border-collapse:collapse;font-size:15px;margin-top:4px}
-.hours td{padding:5px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-.hours td:last-child{text-align:right;color:#c9d2dc}
-.hours tr.today td{color:#fff;font-weight:600}
-.map{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:380px;background:#ddd}
-.map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+/* symptom checker */
+.checker{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px}
+.sym-list{display:grid;gap:10px;align-content:start}
+.sym{display:flex;align-items:center;justify-content:space-between;gap:14px;text-align:left;width:100%;padding:20px 22px;border-radius:14px;background:var(--bg-2);border:1px solid var(--line);color:var(--text);font:600 16px Inter,sans-serif;cursor:pointer;transition:all .2s}
+.sym:hover{border-color:rgba(255,255,255,.25)}
+.sym[aria-selected=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.sym svg{flex:none;transition:transform .2s}
+.sym[aria-selected=true] svg{transform:translateX(4px)}
+.sym-panel{position:relative;border-radius:var(--radius);overflow:hidden;min-height:440px;background:var(--bg-2);border:1px solid var(--line);isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;padding:36px}
+.sym-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:opacity .5s}
+.sym-panel::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,16,20,.2),rgba(13,16,20,.95) 75%)}
+.sym-panel .likely{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.sym-panel h3{font-family:"Barlow Condensed";font-size:52px;font-weight:800;text-transform:uppercase;line-height:.95;margin:8px 0 12px}
+.sym-panel p{color:#cdd5dd;max-width:520px}
+.sym-panel .btn{margin-top:24px;align-self:flex-start}
 
-.cta-band{background:var(--brick);color:#fff;text-align:center;padding:64px 0}
-.cta-band h2{font-size:clamp(28px,4vw,40px)}
-.cta-band p{opacity:.9;margin:10px 0 26px;font-size:17px}
-.cta-band .btn{background:#fff;color:var(--brick)}
+/* gallery strip */
+.strip{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px;height:380px}
+.strip figure{border-radius:var(--radius);overflow:hidden;position:relative}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.strip figure:hover img{transform:scale(1.05)}
+.strip figcaption{position:absolute;left:16px;bottom:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);font-size:12px;padding:6px 12px;border-radius:999px;color:#dfe5eb}
 
-footer{background:var(--ink);color:#8e9aa8;font-size:14px;padding:32px 0}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* reviews */
+.reviews-wrap{position:relative}
+.rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rcard{flex:0 0 min(420px,85%);scroll-snap-align:start;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:18px}
+.rcard p{font-size:19px;line-height:1.5;color:#e7ecf0}
+.rcard .who{margin-top:auto;display:flex;align-items:center;gap:12px;font-size:14px;color:var(--dim)}
+.rcard .who i{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700;color:#fff;background:#2a323d}
+.rail-ctrl{display:flex;gap:10px}
+.rail-ctrl button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:var(--bg-2);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.rail-ctrl button:hover{background:var(--accent);color:var(--accent-ink)}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.tags span{border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;color:#c7cfd8}
+.tags b{color:var(--accent);margin-left:6px}
 
-.mobile-call{display:none}
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.faq details{border-top:1px solid #ddd6cb;padding:24px 0}
+.faq details:last-child{border-bottom:1px solid #ddd6cb}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-weight:700;font-size:19px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:"Barlow Condensed";font-size:32px;line-height:.8;color:var(--accent);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--ink-dim);margin-top:12px;max-width:620px}
 
-@media (max-width:860px){
+/* visit */
+.visit-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:16px}
+.vcard{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:40px}
+.vcard h2{font-size:clamp(44px,5vw,70px)}
+.vrow{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:30px 0}
+.vrow dt{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.vrow dd{font-size:17px}
+.vrow a{text-decoration:none}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:12px 0;border-top:1px solid var(--line);font-size:15px}
+.hours td:last-child{text-align:right;color:var(--dim)}
+.hours tr.today td{color:#fff;font-weight:700}
+.hours tr.today td:first-child::after{content:"Today";margin-left:10px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);padding:3px 8px;border-radius:999px}
+.mapbox{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:520px;position:relative}
+.mapbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.3) contrast(1.05)}
+
+/* final cta */
+.final{position:relative;isolation:isolate;overflow:hidden;text-align:center;padding:150px 0}
+.final img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.final::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at center,rgba(13,16,20,.6),rgba(13,16,20,.95))}
+.final h2{font-size:clamp(52px,8vw,120px)}
+.final p{color:#c7cfd8;font-size:19px;margin:18px auto 36px;max-width:520px}
+
+footer{background:#080a0d;border-top:1px solid var(--line);padding:70px 0 40px;color:var(--dim);font-size:14px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.fgrid h4{color:#fff;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+.fgrid ul{list-style:none;display:grid;gap:10px}
+.fgrid a{text-decoration:none}
+.fgrid a:hover{color:#fff}
+.fbottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:56px;padding-top:26px;border-top:1px solid var(--line);font-size:13px;color:var(--dim-2)}
+
+.mcall{display:none}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero h1 .line span{transform:none}.fade-up{opacity:1;transform:none}}
+
+@media (max-width:980px){
   .nav ul{display:none}
-  .hero .wrap,.visit .wrap{grid-template-columns:1fr}
-  .hero .wrap{padding-top:56px;padding-bottom:56px;gap:32px}
-  .strip .wrap{grid-template-columns:1fr 1fr}
-  .steps,.reviews{grid-template-columns:1fr}
-  section{padding:64px 0}
-  .mobile-call{display:flex;position:fixed;left:16px;right:16px;bottom:16px;z-index:30;justify-content:center;box-shadow:0 10px 30px -8px rgba(0,0,0,.4)}
-  footer{padding-bottom:96px}
+  .hero-grid,.process,.checker,.faq,.visit-grid{grid-template-columns:1fr}
+  .hero{padding-top:150px}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .bento{grid-template-columns:1fr}
+  .t1,.t2,.t3,.t4,.t5,.t6{grid-column:auto;grid-row:auto;min-height:300px}
+  .mini-list{grid-template-columns:1fr 1fr}
+  .head{flex-direction:column;align-items:flex-start;gap:18px}
+  .strip{grid-template-columns:1fr 1fr;height:auto}
+  .strip figure{height:220px}
+  .strip figure:first-child{grid-column:span 2}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .pad{padding:80px 0}
+  .faq{gap:30px}
+  .mapbox{min-height:360px}
 }
-@media (max-width:480px){
+@media (max-width:600px){
+  .wrap{padding:0 16px}
   .nav .btn{display:none}
-  .strip .wrap{grid-template-columns:1fr}
+  .mini-list{grid-template-columns:1fr}
+  .vrow{grid-template-columns:1fr}
+  .vcard{padding:28px}
+  .sym-panel{min-height:380px;padding:26px}
+  .sym-panel h3{font-size:40px}
+  .fgrid{grid-template-columns:1fr}
+  .mcall{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:70}
+  footer{padding-bottom:100px}
+  .stat{padding:24px 18px}
+  .stat b{font-size:46px}
 }
 </style>
 </head>
 <body>
 
-<div class="concept"><b>Website concept</b> — a free sample design made for Salem Street Car Care Center. Not affiliated with or published by the business.</div>
+<div class="concept"><b>Website concept</b> — a free sample design made for Salem Street Car Care Center. Not affiliated with the business. Photos are stock placeholders.</div>
 
-<header class="nav">
+<header class="nav" id="nav">
   <div class="wrap">
-    <a href="#top" class="brand">
-      <span class="mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-      Salem Street Car Care
+    <a href="#top" class="brand" aria-label="Salem Street Car Care Center home">
+      <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+        <rect width="46" height="46" rx="12" fill="#ff6b2c"/>
+        <path d="M23 9l12 7v14l-12 7-12-7V16z" fill="none" stroke="#1a0d06" stroke-width="2.6"/>
+        <path d="M17.5 27.5c1 1.6 3 2.6 5.5 2.6 3 0 5-1.5 5-3.6 0-4.6-10-2.4-10-6.8 0-2 2-3.5 4.8-3.5 2.2 0 4 .9 5 2.3" fill="none" stroke="#1a0d06" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+      <span><b>Salem Street</b><small>Car Care Center · Apex</small></span>
     </a>
     <ul>
       <li><a href="#services">Services</a></li>
-      <li><a href="#how">How it works</a></li>
+      <li><a href="#process">How it works</a></li>
+      <li><a href="#checker">Symptom checker</a></li>
       <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#visit">Hours &amp; location</a></li>
+      <li><a href="#visit">Visit</a></li>
     </ul>
-    <a class="btn btn-primary" href="tel:+19193030131">Call (919) 303-0131</a>
+    <a class="btn btn-accent" href="tel:+19193030131">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      (919) 303-0131
+    </a>
   </div>
 </header>
 
 <main id="top">
-<section class="hero" style="padding:0">
-  <div class="wrap">
+<section class="hero">
+  <div class="hero-bg" role="img" aria-label="Cars on lifts in a repair workshop"></div>
+  <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Auto repair · Downtown Apex, NC</span>
-      <h1>Honest auto repair, <em>done right</em> the first time.</h1>
-      <p class="lead">Brakes, inspections, AC, alignments and everything in between. Drop your car off, get your estimate by text, approve it, and pick it up. No runaround, fair prices.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="tel:+19193030131">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call to book
-        </a>
-        <a class="btn btn-ghost" href="#services">See services</a>
+      <span class="kicker fade-up">Auto repair · Downtown Apex, NC</span>
+      <h1 class="display">
+        <span class="line"><span>Honest repair.</span></span>
+        <span class="line"><span><em>Fast</em> turnaround.</span></span>
+        <span class="line"><span class="outline">No runaround.</span></span>
+      </h1>
+      <p class="lead fade-up">Brakes, NC inspections, AC, alignments and everything in between. Drop it off, approve your estimate by text, and pick it up when it’s done.</p>
+      <div class="cta fade-up">
+        <a class="btn btn-accent" href="tel:+19193030131">Call to book a visit</a>
+        <a class="btn btn-glass" href="#checker">What’s wrong with my car?</a>
       </div>
     </div>
-    <aside class="rating-card" aria-label="Customer rating">
-      <div class="big-score"><strong>4.9</strong><span class="stars" aria-hidden="true">★★★★★</span></div>
-      <div class="sub">from 490+ Google reviews</div>
-      <blockquote>“Great service and great people. Won’t take my vehicles any other place.”
-        <cite>Google review</cite>
-      </blockquote>
+    <aside class="status-card fade-up" aria-label="Shop status and rating">
+      <div class="status-top">
+        <span><i class="pulse" id="pulse"></i><span id="openText">Open today</span></span>
+        <small id="openSub">7 AM – 6 PM</small>
+      </div>
+      <div class="score">
+        <strong>4.9</strong>
+        <div><div class="stars" aria-hidden="true">★★★★★</div><small>492 Google reviews</small></div>
+      </div>
+      <div>
+        <q>Great service and great people. Won’t take my vehicles any other place.</q>
+        <cite><i class="g-dot"></i>Google review</cite>
+      </div>
     </aside>
   </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
 </section>
 
-<div class="strip">
-  <div class="wrap">
-    <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span><b>Open 7 AM weekdays</b>Drop off before work</span></div>
-    <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span><b>Estimates by text</b>Approve from your phone</span></div>
-    <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>NC state inspections</b>Often done in ~15 min</span></div>
-    <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span><b>400 S Salem St</b>Downtown Apex</span></div>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Brake repair</span><span>NC state inspections</span><span>AC &amp; heating</span><span>Alignments</span><span>Batteries</span><span>Alternators &amp; starters</span><span>CV axles</span><span>Catalytic converters</span><span>Clutch repair</span><span>Diagnostics</span>
+    <span>Brake repair</span><span>NC state inspections</span><span>AC &amp; heating</span><span>Alignments</span><span>Batteries</span><span>Alternators &amp; starters</span><span>CV axles</span><span>Catalytic converters</span><span>Clutch repair</span><span>Diagnostics</span>
   </div>
 </div>
 
-<section id="services">
+<section class="stats">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">What we fix</span>
-      <h2>Full-service repair for everyday drivers</h2>
-      <p>From a check-engine light to a clutch job, our technicians handle it in-house.</p>
-    </div>
-    <div class="services">
-      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Brake repair</h3><p>Pads, rotors, calipers and brake fluid service.</p></div>
-      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>State inspections</h3><p>NC safety and emissions inspections, quick turnaround.</p></div>
-      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg></div><h3>AC &amp; heating</h3><p>Recharge, leak checks and climate system repair.</p></div>
-      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/></svg></div><h3>Alignment</h3><p>Stop the pull and save your tires.</p></div>
-      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="18" height="12" rx="2"/><path d="M22 11v4M6 7V5M16 7V5"/></svg></div><h3>Batteries</h3><p>Testing and installation, plus charging-system checks.</p></div>
-      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></div><h3>Alternator &amp; starter</h3><p>Car won’t start or lights dimming? We’ll find out why.</p></div>
-      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 12h6"/></svg></div><h3>CV axles</h3><p>Clicking when you turn? Axle and boot replacement.</p></div>
-      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14h16M6 10h12M8 6h8M4 18h16"/></svg></div><h3>Catalytic converters</h3><p>Diagnosis and replacement to pass emissions.</p></div>
-      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Clutch repair</h3><p>Slipping or grinding gears on a manual.</p></div>
-      <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>General repair</h3><p>Diagnostics, check-engine lights and maintenance.</p></div>
-    </div>
-    <p class="note">When you call, please mention the year, make and model of your vehicle.</p>
-  </div>
-</section>
-
-<section id="how" class="how">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">How it works</span>
-      <h2>Easy for busy people</h2>
-    </div>
-    <div class="steps">
-      <div class="step"><h3>Drop it off</h3><p>Come in when we open at 7, or use after-hours drop-off. Call ahead for an appointment since we get busy.</p></div>
-      <div class="step"><h3>Approve by text</h3><p>We diagnose the problem and text you a clear estimate. Nothing gets done until you say yes.</p></div>
-      <div class="step"><h3>Pick it up</h3><p>Quick turnaround and after-hours pickup available, so you don’t have to rearrange your day.</p></div>
+    <div class="stats-grid reveal">
+      <div class="stat"><b><span data-count="4.9" data-dec="1">0</span><sup>★</sup></b><span>Average Google rating</span></div>
+      <div class="stat"><b><span data-count="492">0</span><sup>+</sup></b><span>Reviews from local drivers</span></div>
+      <div class="stat"><b><span data-count="7">0</span><sup>AM</sup></b><span>Open early on weekdays</span></div>
+      <div class="stat"><b>~<span data-count="15">0</span><sup>MIN</sup></b><span>Typical inspection with an appointment</span></div>
     </div>
   </div>
 </section>
 
-<section id="reviews">
+<section class="pad" id="services" style="padding-top:40px">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Reviews</span>
-      <h2>Apex drivers keep coming back</h2>
-      <p>Rated 4.9 out of 5 across 490+ reviews on Google.</p>
+    <div class="head">
+      <div><span class="kicker reveal">What we fix</span><h2 class="display reveal d1">Full-service<br>repair, in-house</h2></div>
+      <p class="reveal d2">From a squeaky brake to a slipping clutch, our technicians diagnose it, explain it, and fix it right the first time.</p>
     </div>
-    <div class="reviews">
-      <div class="rev"><span class="stars" aria-label="5 stars">★★★★★</span><p>“Very easy process. Drop off the car after hours, text messages with estimate to approve, quick turnaround, affordable charges.”</p><span class="who">Google review</span></div>
-      <div class="rev"><span class="stars" aria-label="5 stars">★★★★★</span><p>“My state inspection was promptly completed in 15 minutes with my appointment. Good quality service.”</p><span class="who">Google review</span></div>
-      <div class="rev"><span class="stars" aria-label="5 stars">★★★★★</span><p>“Excellent service, quick turn around, kind and respectful team members, and reasonably priced.”</p><span class="who">Google review</span></div>
+    <div class="bento">
+      <article class="tile t1 reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1760317890322-364a810cd4da?auto=format&fit=crop&w=1400&q=80" alt="Close-up of a car brake rotor and caliper">
+        <span class="num">01</span><span class="chip">Most requested</span>
+        <h3>Brake repair</h3>
+        <p>Squealing, grinding or a soft pedal? Pads, rotors, calipers and brake fluid, done properly so you stop with confidence.</p>
+      </article>
+      <article class="tile t2 reveal d1">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=1000&q=80" alt="Mechanic inspecting a car engine">
+        <span class="num">02</span><span class="chip">Quick</span>
+        <h3>NC state inspections</h3>
+        <p>Safety and emissions inspections, often done in about 15 minutes with an appointment.</p>
+      </article>
+      <article class="tile t3 reveal d2">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1000&q=80" alt="Car engine bay">
+        <span class="num">03</span>
+        <h3>Diagnostics &amp; repair</h3>
+        <p>Check-engine lights, strange noises and everything in between.</p>
+      </article>
+      <article class="tile t4 reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1645445522156-9ac06bc7a767?auto=format&fit=crop&w=900&q=80" alt="Technician working on a tire">
+        <span class="num">04</span>
+        <h3>Alignment</h3>
+        <p>Stop the pull and make your tires last.</p>
+      </article>
+      <article class="tile t5 reveal d1">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=900&q=80" alt="Hands working on an engine with a wrench">
+        <span class="num">05</span>
+        <h3>Clutch &amp; CV axles</h3>
+        <p>Slipping gears or clicking on turns, handled.</p>
+      </article>
+      <article class="tile t6 reveal d2">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=900&q=80" alt="Technician working in an engine bay">
+        <span class="num">06</span>
+        <h3>AC &amp; heating</h3>
+        <p>Cold air in July, heat in January.</p>
+      </article>
     </div>
-    <div class="tags"><span>Fair pricing</span><span>Trustworthy mechanic</span><span>Fast inspections</span><span>Friendly staff</span><span>Quick turnaround</span></div>
+    <div class="mini-list">
+      <div class="mini reveal"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="18" height="12" rx="2"/><path d="M22 11v4M6 7V5M16 7V5M7 13h4M9 11v4M14 13h3"/></svg></span><span><b>Batteries</b><small>Test &amp; install</small></span></div>
+      <div class="mini reveal d1"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></span><span><b>Alternator &amp; starter</b><small>No-start diagnosis</small></span></div>
+      <div class="mini reveal d2"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14h16M6 10h12M8 6h8M4 18h16"/></svg></span><span><b>Catalytic converters</b><small>Pass emissions</small></span></div>
+      <div class="mini reveal d3"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></svg></span><span><b>General auto repair</b><small>Most makes &amp; models</small></span></div>
+    </div>
+    <p class="svc-note">When you call, please mention the year, make and model of your vehicle.</p>
   </div>
 </section>
 
-<section id="visit" class="visit">
+<section class="pad light" id="process">
+  <div class="wrap process">
+    <div>
+      <span class="kicker reveal">How it works</span>
+      <h2 class="display reveal d1" style="font-size:clamp(44px,6vw,84px);margin:16px 0 36px">Built for<br>busy people</h2>
+      <div class="steps">
+        <div class="step reveal"><div><h3>Drop it off</h3><p>Come in when we open at 7 AM, or use after-hours drop-off. Call ahead for an appointment, since we get busy.</p></div></div>
+        <div class="step reveal d1"><div><h3>Approve by text</h3><p>We diagnose the problem and text you a clear estimate. Nothing gets done until you say yes.</p></div></div>
+        <div class="step reveal d2"><div><h3>Pick it up</h3><p>Quick turnaround and after-hours pickup, so you don’t have to rearrange your day around your car.</p></div></div>
+      </div>
+    </div>
+    <div class="reveal d2">
+      <div class="phone" aria-label="Illustration of a text message estimate">
+        <div class="screen">
+          <div class="screen-top"><div class="av">SS</div><b>Salem Street Car Care</b><small>Text message</small></div>
+          <div class="chat" id="chat">
+            <div class="bub them">Hi! We’ve looked at your car. The squeal is your front brake pads.</div>
+            <div class="bub them">Your estimate for front pads and rotors is ready. Reply YES to approve.</div>
+            <div class="bub me">YES 👍</div>
+            <div class="bub them">You’re all set. We’ll text you when it’s ready for pickup.</div>
+            <div class="bub them">Ready! Pick up any time, including after hours.</div>
+          </div>
+        </div>
+      </div>
+      <p class="ill">Illustration of how text estimates work</p>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="checker">
   <div class="wrap">
-    <div class="info">
-      <h2>Come see us</h2>
-      <dl>
+    <div class="head">
+      <div><span class="kicker reveal">Symptom checker</span><h2 class="display reveal d1">What’s your<br>car telling you?</h2></div>
+      <p class="reveal d2">Pick what you’re noticing and we’ll point you to the likely fix. Then call and we’ll take a proper look.</p>
+    </div>
+    <div class="checker">
+      <div class="sym-list reveal" role="tablist" aria-label="Symptoms" id="symList"></div>
+      <div class="sym-panel reveal d1" role="tabpanel" id="symPanel" aria-live="polite">
+        <img id="symImg" alt="">
+        <span class="likely">Likely fix</span>
+        <h3 id="symTitle"></h3>
+        <p id="symText"></p>
+        <a class="btn btn-accent" href="tel:+19193030131">Call (919) 303-0131</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-label="Shop photos">
+  <div class="strip">
+    <figure class="reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1792793176006-a7b35e29c7e1?auto=format&fit=crop&w=1200&q=80" alt="Repair shop with hydraulic lifts"><figcaption>In-house service bays</figcaption></figure>
+    <figure class="reveal d1"><img loading="lazy" src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80" alt="Technician tightening a part"><figcaption>Experienced technicians</figcaption></figure>
+    <figure class="reveal d2"><img loading="lazy" src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=800&q=80" alt="Mechanic checking under the hood"><figcaption>Clear diagnosis</figcaption></figure>
+  </div>
+</section>
+
+<section class="pad" id="reviews">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker reveal">Reviews</span><h2 class="display reveal d1">4.9 stars.<br>492 reviews.</h2></div>
+      <div class="rail-ctrl reveal d2">
+        <button type="button" aria-label="Previous review" data-dir="-1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button type="button" aria-label="Next review" data-dir="1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="rail reveal" id="rail">
+      <article class="rcard"><span class="stars">★★★★★</span><p>“Very easy process. Drop off the car after hours, text messages with estimate to approve, quick turnaround, affordable charges for repair and easy pick up after hours.”</p><div class="who"><i>R</i>Google review</div></article>
+      <article class="rcard"><span class="stars">★★★★★</span><p>“My state inspection was promptly completed in 15 minutes with my appointment. Good quality service.”</p><div class="who"><i>G</i>Google review</div></article>
+      <article class="rcard"><span class="stars">★★★★★</span><p>“Excellent service, quick turn around, kind and respectful team members, and reasonably priced. I will definitely use them again.”</p><div class="who"><i>S</i>Google review</div></article>
+      <article class="rcard"><span class="stars">★★★★★</span><p>“They also have great customer service and technicians are freaking top notch!”</p><div class="who"><i>T</i>Google review</div></article>
+      <article class="rcard"><span class="stars">★★★★★</span><p>“Great service and great people. Won’t take my vehicles any other place.”</p><div class="who"><i>G</i>Google review</div></article>
+      <article class="rcard"><span class="stars">★★★★★</span><p>“Very kind staff, very fast service.”</p><div class="who"><i>V</i>Google review</div></article>
+    </div>
+    <div class="tags reveal">
+      <span>Fair pricing<b>37</b></span><span>State inspection<b>16</b></span><span>Trustworthy mechanic<b>7</b></span><span>Brake job<b>4</b></span>
+    </div>
+  </div>
+</section>
+
+<section class="pad light" id="faq">
+  <div class="wrap faq">
+    <div>
+      <span class="kicker reveal">FAQ</span>
+      <h2 class="display reveal d1" style="font-size:clamp(44px,6vw,84px);margin-top:16px">Good<br>questions</h2>
+    </div>
+    <div class="reveal d1">
+      <details open><summary>Do I need an appointment?</summary><p>Walk-ins are welcome, but we can get busy, so calling ahead at (919) 303-0131 is the best way to get your car in quickly.</p></details>
+      <details><summary>Can I drop off or pick up after hours?</summary><p>Yes. Drop your car off after hours and pick it up after hours once it’s done, so you don’t have to take time off work.</p></details>
+      <details><summary>How do I approve repairs?</summary><p>We text you a clear estimate after we diagnose the problem. Nothing is done until you approve it.</p></details>
+      <details><summary>How long does an NC inspection take?</summary><p>With an appointment, inspections are often done in about 15 minutes.</p></details>
+      <details><summary>What should I tell you when I call?</summary><p>The year, make and model of your vehicle, plus what you’re noticing: sounds, warning lights, or how it’s driving.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="visit">
+  <div class="wrap visit-grid">
+    <div class="vcard reveal">
+      <span class="kicker">Visit us</span>
+      <h2 class="display" style="margin-top:14px">400 S Salem St</h2>
+      <dl class="vrow">
         <div><dt>Address</dt><dd>400 S Salem St<br>Apex, NC 27502</dd></div>
         <div><dt>Phone</dt><dd><a href="tel:+19193030131">(919) 303-0131</a></dd></div>
-        <div><dt>Hours</dt><dd>
-          <table class="hours" id="hours">
-            <tr data-d="1"><td>Monday</td><td>7 AM – 6 PM</td></tr>
-            <tr data-d="2"><td>Tuesday</td><td>7 AM – 6 PM</td></tr>
-            <tr data-d="3"><td>Wednesday</td><td>7 AM – 6 PM</td></tr>
-            <tr data-d="4"><td>Thursday</td><td>7 AM – 6 PM</td></tr>
-            <tr data-d="5"><td>Friday</td><td>7 AM – 6 PM</td></tr>
-            <tr data-d="6"><td>Saturday</td><td>Closed</td></tr>
-            <tr data-d="0"><td>Sunday</td><td>Closed</td></tr>
-          </table>
-        </dd></div>
       </dl>
+      <table class="hours" id="hours">
+        <tr data-d="1"><td>Monday</td><td>7 AM – 6 PM</td></tr>
+        <tr data-d="2"><td>Tuesday</td><td>7 AM – 6 PM</td></tr>
+        <tr data-d="3"><td>Wednesday</td><td>7 AM – 6 PM</td></tr>
+        <tr data-d="4"><td>Thursday</td><td>7 AM – 6 PM</td></tr>
+        <tr data-d="5"><td>Friday</td><td>7 AM – 6 PM</td></tr>
+        <tr data-d="6"><td>Saturday</td><td>Closed</td></tr>
+        <tr data-d="0"><td>Sunday</td><td>Closed</td></tr>
+      </table>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
+        <a class="btn btn-accent" href="tel:+19193030131">Call now</a>
+        <a class="btn btn-glass" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=Salem+Street+Car+Care+Center+400+S+Salem+St+Apex+NC">Get directions</a>
+      </div>
     </div>
-    <div class="map">
-      <iframe title="Map to Salem Street Car Care Center" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        src="https://maps.google.com/maps?q=Salem%20Street%20Car%20Care%20Center%2C%20400%20S%20Salem%20St%2C%20Apex%2C%20NC%2027502&z=16&output=embed"></iframe>
+    <div class="mapbox reveal d1">
+      <iframe title="Map to Salem Street Car Care Center" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Salem%20Street%20Car%20Care%20Center%2C%20400%20S%20Salem%20St%2C%20Apex%2C%20NC%2027502&amp;z=16&amp;output=embed"></iframe>
     </div>
   </div>
 </section>
 
-<div class="cta-band">
+<section class="final">
+  <img loading="lazy" src="https://images.unsplash.com/photo-1792793176006-a7b35e29c7e1?auto=format&fit=crop&w=2000&q=70" alt="">
   <div class="wrap">
-    <h2>Car acting up? Let’s take a look.</h2>
-    <p>Call now to get on the schedule.</p>
-    <a class="btn" href="tel:+19193030131">Call (919) 303-0131</a>
+    <h2 class="display reveal">Car acting up?</h2>
+    <p class="reveal d1">Give us a call and we’ll get you on the schedule. Honest answers, fair prices, fast turnaround.</p>
+    <a class="btn btn-accent reveal d2" href="tel:+19193030131">Call (919) 303-0131</a>
   </div>
-</div>
+</section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Salem Street Car Care Center · 400 S Salem St, Apex, NC 27502</span>
-    <span>Concept design preview</span>
+    <div class="fgrid">
+      <div>
+        <a href="#top" class="brand" style="margin-bottom:16px;display:inline-flex">
+          <svg width="40" height="40" viewBox="0 0 46 46" aria-hidden="true"><rect width="46" height="46" rx="12" fill="#ff6b2c"/><path d="M23 9l12 7v14l-12 7-12-7V16z" fill="none" stroke="#1a0d06" stroke-width="2.6"/><path d="M17.5 27.5c1 1.6 3 2.6 5.5 2.6 3 0 5-1.5 5-3.6 0-4.6-10-2.4-10-6.8 0-2 2-3.5 4.8-3.5 2.2 0 4 .9 5 2.3" fill="none" stroke="#1a0d06" stroke-width="2.6" stroke-linecap="round"/></svg>
+          <span><b style="color:#fff">Salem Street</b><small>Car Care Center</small></span>
+        </a>
+        <p style="max-width:300px">Honest, fast auto repair in downtown Apex, North Carolina.</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#services">Brake repair</a></li><li><a href="#services">NC inspections</a></li><li><a href="#services">AC &amp; heating</a></li><li><a href="#services">Alignment</a></li></ul></div>
+      <div><h4>Shop</h4><ul><li><a href="#process">How it works</a></li><li><a href="#checker">Symptom checker</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+19193030131">(919) 303-0131</a></li><li>400 S Salem St<br>Apex, NC 27502</li><li>Mon–Fri 7 AM – 6 PM</li></ul></div>
+    </div>
+    <div class="fbottom"><span>© 2026 Salem Street Car Care Center</span><span>Concept design preview · Stock photos via Unsplash</span></div>
   </div>
 </footer>
 
-<a class="btn btn-primary mobile-call" href="tel:+19193030131">Call (919) 303-0131</a>
+<a class="btn btn-accent mcall" href="tel:+19193030131">Call (919) 303-0131</a>
 
 <script>
-  try{var d=new Date().getDay();var r=document.querySelector('#hours tr[data-d="'+d+'"]');if(r)r.className='today';}catch(e){}
+(function(){
+  // sticky nav
+  var nav=document.getElementById('nav');
+  var bar=document.querySelector('.concept');
+  function onScroll(){var s=window.scrollY>40;nav.classList.toggle('solid',s);nav.style.top=s?'0px':bar.offsetHeight+'px'}
+  window.addEventListener('resize',onScroll);
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // open status + today row (shop time zone)
+  try{
+    var now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'}));
+    var d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+    var row=document.querySelector('#hours tr[data-d="'+d+'"]');if(row)row.className='today';
+    var weekday=d>=1&&d<=5,open=weekday&&h>=7&&h<18;
+    document.getElementById('openText').textContent=open?'Open now':'Closed now';
+    document.getElementById('openSub').textContent=open?'Until 6 PM today':(weekday&&h<7?'Opens 7 AM today':'Opens 7 AM '+(d===5||d===6?'Monday':'tomorrow'));
+    if(!open)document.getElementById('pulse').classList.add('closed');
+  }catch(e){}
+
+  // reveal + counters
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.15}):null;
+  document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('on')});
+  function count(el){var t=parseFloat(el.dataset.count),dec=+(el.dataset.dec||0),s=null;function f(ts){if(!s)s=ts;var p=Math.min((ts-s)/1400,1),v=t*(1-Math.pow(1-p,3));el.textContent=v.toFixed(dec);if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+  var cio=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){count(e.target);cio.unobserve(e.target)}})},{threshold:.6}):null;
+  document.querySelectorAll('[data-count]').forEach(function(el){cio?cio.observe(el):(el.textContent=el.dataset.count)});
+
+  // chat animation
+  var chat=document.getElementById('chat'),bubs=chat.querySelectorAll('.bub');
+  var chio=('IntersectionObserver' in window)?new IntersectionObserver(function(es){if(es[0].isIntersecting){bubs.forEach(function(b,i){setTimeout(function(){b.classList.add('in')},300+i*700)});chio.disconnect()}},{threshold:.4}):null;
+  chio?chio.observe(chat):bubs.forEach(function(b){b.classList.add('in')});
+
+  // symptom checker
+  var U='https://images.unsplash.com/photo-',Q='?auto=format&fit=crop&w=1400&q=80';
+  var S=[
+    {s:'Squealing or grinding when I brake',t:'Brake repair',p:'Usually worn brake pads, and if it’s grinding, possibly rotors too. Don’t wait on this one: it gets more expensive the longer it goes.',i:'1760317890322-364a810cd4da'},
+    {s:'Car won’t start or clicks',t:'Battery, starter or alternator',p:'A dead battery is the most common cause, but a failing starter or alternator can look the same. We’ll test the whole charging system.',i:'1619642751034-765dfdf7c58e'},
+    {s:'AC is blowing warm air',t:'AC &amp; heating repair',p:'Often low refrigerant from a small leak, or a failing component. We’ll find the cause instead of just topping it off.',i:'1487754180451-c456f719a1fc'},
+    {s:'Car pulls to one side',t:'Alignment',p:'Usually an alignment issue, sometimes tires or suspension. An alignment also keeps your tires from wearing unevenly.',i:'1645445522156-9ac06bc7a767'},
+    {s:'Clicking when I turn',t:'CV axle repair',p:'A clicking sound on turns is a classic sign of a worn CV joint or torn boot. We’ll inspect and replace the axle if needed.',i:'1625047509248-ec889cbff17f'},
+    {s:'Check engine light or failed emissions',t:'Diagnostics &amp; inspection',p:'We’ll read the codes and track down the real cause, from sensors to catalytic converters, so you can pass your NC inspection.',i:'1486262715619-67b85e0b08d3'}
+  ];
+  var list=document.getElementById('symList'),img=document.getElementById('symImg');
+  S.forEach(function(x,k){S[k].pre=new Image();});
+  function pick(k){
+    list.querySelectorAll('.sym').forEach(function(b,j){b.setAttribute('aria-selected',j===k)});
+    img.style.opacity=0;
+    setTimeout(function(){img.src=U+S[k].i+Q;img.alt=S[k].t.replace('&amp;','&');img.onload=function(){img.style.opacity=1}},180);
+    document.getElementById('symTitle').innerHTML=S[k].t;
+    document.getElementById('symText').textContent=S[k].p;
+  }
+  S.forEach(function(x,k){
+    var b=document.createElement('button');b.type='button';b.className='sym';b.setAttribute('role','tab');
+    b.innerHTML='<span>'+x.s+'</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+    b.addEventListener('click',function(){pick(k)});list.appendChild(b);
+  });
+  pick(0);
+
+  // review rail
+  var rail=document.getElementById('rail');
+  document.querySelectorAll('.rail-ctrl button').forEach(function(b){b.addEventListener('click',function(){rail.scrollBy({left:+b.dataset.dir*(rail.firstElementChild.offsetWidth+18),behavior:'smooth'})})});
+})();
 </script>
 </body>
 </html>

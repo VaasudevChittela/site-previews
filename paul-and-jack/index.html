@@ -3,300 +3,531 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Paul &amp; Jack | European Bakery &amp; Café in Raleigh, Cary &amp; Wake Forest</title>
-<meta name="description" content="Flaky croissants, bomboloni, cakes and coffee. European-style bakery cafés in Downtown Raleigh, Cary and Wake Forest, NC.">
+<title>Paul &amp; Jack | European Bakery &amp; Café · Raleigh, Cary &amp; Wake Forest</title>
+<meta name="description" content="Flaky croissants, bomboloni, celebration cakes and coffee. European-style bakery cafés in Downtown Raleigh, Cary and Wake Forest, NC.">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#f7f0e6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#f8f2e9; --cream-2:#f1e7d8; --card:#fffdf9;
-  --espresso:#2b1d16; --cocoa:#5a3d2e; --muted:#8a7464;
-  --butter:#e8b04b; --rose:#c86b5a; --line:#e6d9c6;
+  --cream:#f7f0e6; --cream-2:#efe4d4; --paper:#fffbf5;
+  --espresso:#2a1c15; --cocoa:#5b4234; --muted:#8c7666;
+  --gold:#c9974a; --gold-2:#e2b66b; --rose:#b8604f; --line:#e3d5c1;
+  --radius:22px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:"DM Sans",system-ui,sans-serif;background:var(--cream);color:var(--espresso);line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+body{font-family:Jost,system-ui,sans-serif;background:var(--cream);color:var(--espresso);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
 a{color:inherit}
-.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rose)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;letter-spacing:-.015em;line-height:.98}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--rose)}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor}
+em.it{font-style:italic;font-weight:500;color:var(--rose)}
+/* paper grain */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-.concept{background:var(--espresso);color:#d9c9b8;font-size:13px;text-align:center;padding:8px 16px}
+.concept{background:var(--espresso);color:#d8c7b4;font-size:12.5px;text-align:center;padding:8px 16px}
 .concept b{color:#fff}
 
-header{position:sticky;top:0;z-index:20;background:rgba(248,242,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header .wrap{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{font-family:Fraunces,serif;font-size:26px;font-weight:600;text-decoration:none;letter-spacing:-.02em}
-.logo i{font-weight:400;color:var(--rose)}
-nav ul{display:flex;gap:28px;list-style:none;font-size:15px;font-weight:500}
-nav a{text-decoration:none;color:var(--cocoa)}
-nav a:hover{color:var(--rose)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .15s,background .15s}
-.btn:hover{transform:translateY(-1px)}
-.btn-dark{background:var(--espresso);color:var(--cream)}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(247,240,230,.86);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.scrolled{border-color:var(--line)}
+header .wrap{height:84px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
+nav.l ul,nav.r ul{display:flex;gap:30px;list-style:none;font-size:14.5px;font-weight:500;letter-spacing:.02em}
+nav.r{justify-self:end;display:flex;align-items:center;gap:26px}
+nav a{text-decoration:none;color:var(--cocoa);position:relative}
+nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:var(--rose);transition:right .3s}
+nav a:hover::after{right:0}
+.logo{text-decoration:none;text-align:center;line-height:1}
+.logo b{font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:700;letter-spacing:-.02em;display:block}
+.logo b i{font-weight:500;color:var(--rose)}
+.logo small{font-size:9.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--muted);display:block;margin-top:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 28px;border-radius:999px;font:600 14.5px Jost,sans-serif;letter-spacing:.04em;text-decoration:none;border:0;cursor:pointer;transition:transform .25s,background .25s,color .25s,box-shadow .25s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-dark{background:var(--espresso);color:var(--cream);box-shadow:0 14px 30px -14px rgba(42,28,21,.6)}
 .btn-dark:hover{background:var(--cocoa)}
-.btn-line{border:1.5px solid var(--espresso)}
+.btn-line{border:1px solid var(--espresso);color:var(--espresso)}
 .btn-line:hover{background:var(--espresso);color:var(--cream)}
+.btn-gold{background:var(--gold-2);color:var(--espresso)}
 
-.hero{padding:72px 0 88px;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(44px,6.4vw,84px);margin:18px 0 22px}
-.hero h1 em{font-style:italic;font-weight:400;color:var(--rose)}
-.hero p{font-size:19px;color:var(--cocoa);max-width:500px}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-.proof{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap}
-.proof div{font-size:14px;color:var(--muted)}
-.proof strong{display:block;font-family:Fraunces,serif;font-size:30px;color:var(--espresso);font-weight:600}
+/* hero */
+.hero{padding:70px 0 120px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:70px;align-items:center}
+.hero h1{font-size:clamp(58px,7.6vw,118px);margin:26px 0 28px}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(40px) rotate(2deg);animation:wordIn 1s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes wordIn{to{opacity:1;transform:none}}
+.hero p.lead{font-size:20px;color:var(--cocoa);max-width:470px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:38px}
+.trust{display:flex;align-items:center;gap:18px;margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
+.faces{display:flex}
+.faces span{width:42px;height:42px;border-radius:50%;border:3px solid var(--cream);margin-left:-10px;background:var(--gold) center/cover}
+.faces span:first-child{margin-left:0}
+.trust b{font-family:"Cormorant Garamond",serif;font-size:26px}
+.trust small{display:block;color:var(--muted);font-size:13.5px;line-height:1.3}
+.stars{color:var(--gold);letter-spacing:2px}
 
-.plate{position:relative;aspect-ratio:1;max-width:480px;justify-self:center;width:100%}
-.plate .disc{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0,#f6ecdf 45%,#e9d8c2 100%);box-shadow:0 40px 80px -30px rgba(43,29,22,.35),inset 0 0 0 14px rgba(255,255,255,.6)}
-.plate svg{position:absolute;inset:12%;width:76%;height:76%}
-.sticker{position:absolute;background:var(--butter);color:var(--espresso);border-radius:50%;width:118px;height:118px;display:grid;place-items:center;text-align:center;font-family:Fraunces,serif;font-size:15px;line-height:1.15;transform:rotate(-12deg);right:-6px;top:6%;box-shadow:0 12px 24px -10px rgba(43,29,22,.4)}
-.sticker b{font-size:30px;display:block}
+.collage{position:relative;height:640px}
+.collage figure{position:absolute;overflow:hidden;box-shadow:0 40px 70px -35px rgba(42,28,21,.55)}
+.collage img{width:100%;height:100%;object-fit:cover}
+.c-main{inset:0 70px 60px 40px;border-radius:300px 300px 26px 26px}
+.c-a{width:230px;height:290px;left:-30px;bottom:-10px;border-radius:24px;border:8px solid var(--cream);animation:float 7s ease-in-out infinite}
+.c-b{width:200px;height:200px;right:0;top:60px;border-radius:50%;border:8px solid var(--cream);animation:float 8s ease-in-out -2s infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+.badge{position:absolute;right:30px;bottom:30px;width:150px;height:150px;z-index:3}
+.badge svg{width:100%;height:100%;animation:spin 22s linear infinite}
+.badge .core{position:absolute;inset:38px;border-radius:50%;background:var(--espresso);display:grid;place-items:center;color:var(--gold-2)}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-section{padding:96px 0}
-.head{max-width:640px;margin-bottom:48px}
-.head h2{font-size:clamp(34px,4.6vw,54px);margin-top:12px}
-.head p{color:var(--cocoa);font-size:18px;margin-top:14px}
+/* marquee */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper);overflow:hidden;padding:22px 0}
+.mtrack{display:flex;width:max-content;animation:marq 40s linear infinite}
+.mtrack span{font-family:"Cormorant Garamond",serif;font-size:38px;font-style:italic;font-weight:500;padding:0 28px;display:flex;align-items:center;gap:56px;white-space:nowrap;color:var(--cocoa)}
+.mtrack span::after{content:"✦";font-style:normal;font-size:18px;color:var(--gold)}
+@keyframes marq{to{transform:translateX(-50%)}}
 
-.case{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.items{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.item{border:1px solid var(--line);border-radius:20px;padding:28px;background:var(--cream);position:relative;overflow:hidden}
-.item .tag{position:absolute;top:18px;right:18px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--espresso);color:var(--cream);padding:4px 10px;border-radius:999px}
-.item .ic{width:56px;height:56px;margin-bottom:18px}
-.item h3{font-size:24px;margin-bottom:6px}
-.item p{color:var(--cocoa);font-size:15px}
+/* story */
+.pad{padding:130px 0}
+.story{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:end}
+.story h2{font-size:clamp(40px,4.8vw,70px)}
+.story p{font-size:18px;color:var(--cocoa);margin-top:22px;max-width:520px}
+.counters{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.counters div{padding:30px 0;border-bottom:1px solid var(--line)}
+.counters div:nth-child(odd){padding-right:20px;border-right:1px solid var(--line)}
+.counters div:nth-child(even){padding-left:30px}
+.counters b{font-family:"Cormorant Garamond",serif;font-size:64px;font-weight:600;line-height:1;display:block}
+.counters small{color:var(--muted);font-size:14px}
 
-.events .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.events ul{list-style:none;display:grid;gap:18px;margin-top:28px}
-.events li{display:flex;gap:14px;align-items:flex-start}
-.events li span{flex:none;width:28px;height:28px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:700}
-.quote-card{background:var(--espresso);color:var(--cream);border-radius:28px;padding:44px}
-.quote-card p{font-family:Fraunces,serif;font-size:26px;line-height:1.3;font-style:italic;font-weight:400}
-.quote-card cite{display:block;margin-top:20px;font-style:normal;font-size:14px;color:#c9b6a3}
+/* menu */
+.menu{background:var(--espresso);color:var(--cream);border-radius:44px;margin:0 16px;padding:120px 0}
+.menu .eyebrow{color:var(--gold-2)}
+.menu-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:50px;flex-wrap:wrap}
+.menu-head h2{font-size:clamp(48px,6vw,92px)}
+.tabs{display:inline-flex;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px}
+.tabs button{border:0;background:none;color:#cdbba8;font:500 15px Jost,sans-serif;padding:12px 24px;border-radius:999px;cursor:pointer;transition:all .25s}
+.tabs button[aria-selected=true]{background:var(--cream);color:var(--espresso)}
+.grid-menu{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.dish{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);overflow:hidden;transition:transform .4s,border-color .4s;animation:dishIn .6s cubic-bezier(.2,.8,.2,1) both}
+.dish:hover{transform:translateY(-6px);border-color:rgba(226,182,107,.5)}
+@keyframes dishIn{from{opacity:0;transform:translateY(24px)}}
+.dish figure{aspect-ratio:4/3;overflow:hidden;position:relative}
+.dish img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.dish:hover img{transform:scale(1.07)}
+.dish .pop{position:absolute;top:14px;left:14px;background:var(--gold-2);color:var(--espresso);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.dish div{padding:24px 26px 28px}
+.dish h3{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:600;line-height:1.05}
+.dish p{color:#bfae9c;font-size:15px;margin-top:8px}
+.menu-note{margin-top:34px;color:#a8947f;font-size:15px;display:flex;gap:18px;flex-wrap:wrap}
+.menu-note span{border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:6px 14px}
 
-.reviews{background:var(--cream-2)}
-.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.rev{background:var(--card);border-radius:20px;padding:28px;border:1px solid var(--line)}
-.stars{color:var(--butter);letter-spacing:2px}
-.rev p{font-family:Fraunces,serif;font-size:20px;line-height:1.35;margin:12px 0 16px}
-.rev small{color:var(--muted);font-size:13px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.chips span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:14px;color:var(--cocoa)}
+/* parallax quote */
+.para{position:relative;height:640px;margin-top:-1px;overflow:hidden;display:grid;place-items:center;text-align:center;color:#fff;isolation:isolate}
+.para .bg{position:absolute;inset:-15% 0;background:url("https://images.unsplash.com/photo-1711141326113-e6b607fd78ef?auto=format&fit=crop&w=2200&q=80") center/cover;z-index:-2;will-change:transform}
+.para::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(30,18,12,.55)}
+.para blockquote{font-family:"Cormorant Garamond",serif;font-size:clamp(36px,5vw,72px);font-style:italic;font-weight:500;line-height:1.05;max-width:960px;padding:0 24px}
+.para cite{display:block;margin-top:24px;font-family:Jost;font-style:normal;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-2)}
 
-.locs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.loc{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column}
-.loc .area{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rose)}
-.loc h3{font-size:30px;margin:6px 0 14px}
-.loc address{font-style:normal;color:var(--cocoa)}
-.loc .rating{font-size:14px;color:var(--muted);margin:10px 0 16px}
-.loc table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:22px}
-.loc td{padding:6px 0;border-top:1px solid var(--line)}
-.loc td:last-child{text-align:right;color:var(--cocoa)}
-.loc .actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
-.loc .btn{padding:10px 18px;font-size:14px}
+/* events */
+.events{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:center}
+.ev-photos{position:relative;height:600px}
+.ev-photos figure{position:absolute;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 60px -30px rgba(42,28,21,.5)}
+.ev-photos img{width:100%;height:100%;object-fit:cover}
+.ev-1{inset:0 120px 120px 0}
+.ev-2{width:300px;height:320px;right:0;bottom:0;border:8px solid var(--cream)}
+.events h2{font-size:clamp(44px,5.4vw,80px)}
+.events .lead{font-size:18px;color:var(--cocoa);margin:22px 0 34px;max-width:520px}
+.ev-list{display:grid;gap:4px}
+.ev-item{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+.ev-item:last-child{border-bottom:1px solid var(--line)}
+.ev-item .n{font-family:"Cormorant Garamond",serif;font-size:44px;font-style:italic;color:var(--gold);line-height:1}
+.ev-item b{font-size:18px;font-weight:600}
+.ev-item p{color:var(--cocoa);font-size:15.5px;margin-top:4px}
+.ev-quote{margin-top:30px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 24px;font-family:"Cormorant Garamond",serif;font-size:22px;font-style:italic;line-height:1.3}
+.ev-quote small{display:block;font-family:Jost;font-style:normal;font-size:13px;color:var(--muted);margin-top:8px}
 
-.insta{background:var(--espresso);color:var(--cream);text-align:center;padding:88px 0}
-.insta h2{font-size:clamp(32px,4.4vw,52px)}
-.insta p{color:#d9c9b8;font-size:18px;margin:14px auto 30px;max-width:520px}
-.insta .btn{background:var(--butter);color:var(--espresso)}
+/* reviews */
+.reviews{background:var(--cream-2);overflow:hidden}
+.rv-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:50px}
+.rv-head h2{font-size:clamp(44px,5.4vw,80px)}
+.big-rating{display:flex;align-items:center;gap:20px}
+.big-rating b{font-family:"Cormorant Garamond",serif;font-size:96px;line-height:.8}
+.big-rating small{display:block;color:var(--muted);font-size:14px}
+.rv-track{display:flex;gap:22px;width:max-content;animation:marq 60s linear infinite}
+.rv-track:hover{animation-play-state:paused}
+.rv{width:400px;flex:none;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:16px}
+.rv p{font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.25}
+.rv small{color:var(--muted);font-size:13.5px;margin-top:auto;display:flex;align-items:center;gap:10px}
+.rv small i{width:30px;height:30px;border-radius:50%;background:var(--espresso);color:var(--cream);display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.chips span{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-size:14px;color:var(--cocoa)}
+.chips b{color:var(--rose);margin-left:6px;font-weight:600}
 
-footer{padding:32px 0;font-size:14px;color:var(--muted)}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* locations */
+.loc-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:stretch}
+.loc-tabs{display:grid;gap:14px}
+.ltab{all:unset;cursor:pointer;display:block;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;transition:all .3s;position:relative}
+.ltab:hover{border-color:var(--gold)}
+.ltab[aria-selected=true]{background:var(--espresso);color:var(--cream);border-color:var(--espresso)}
+.ltab .area{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--rose)}
+.ltab[aria-selected=true] .area{color:var(--gold-2)}
+.ltab h3{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:600;line-height:1.05;margin:4px 0 6px}
+.ltab .meta{display:flex;gap:16px;flex-wrap:wrap;font-size:14.5px;opacity:.85}
+.ltab .open{position:absolute;top:26px;right:26px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:#3fae6a;box-shadow:0 0 0 4px rgba(63,174,106,.18)}
+.dot.off{background:#c4574a;box-shadow:0 0 0 4px rgba(196,87,74,.18)}
+.loc-panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:grid;grid-template-rows:1fr auto}
+.loc-map{position:relative;min-height:380px}
+.loc-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:sepia(.25) saturate(.9)}
+.loc-info{padding:28px 30px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.loc-info dt{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);margin-bottom:6px}
+.loc-info table{width:100%;border-collapse:collapse;font-size:14.5px}
+.loc-info td{padding:4px 0}
+.loc-info td:last-child{text-align:right;color:var(--cocoa)}
+.loc-actions{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap}
 
-@media (max-width:900px){
-  nav ul{display:none}
-  .hero .wrap,.events .wrap{grid-template-columns:1fr}
-  .hero{padding:48px 0 64px}
-  .plate{max-width:340px}
-  .items,.revs,.locs{grid-template-columns:1fr}
-  section{padding:68px 0}
-  .quote-card{padding:32px}
+/* instagram */
+.insta{text-align:center}
+.insta h2{font-size:clamp(44px,5.4vw,80px)}
+.insta p{color:var(--cocoa);font-size:18px;margin:16px auto 44px;max-width:520px}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:44px}
+.ig-grid a{aspect-ratio:1;border-radius:16px;overflow:hidden;position:relative;display:block}
+.ig-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.ig-grid a::after{content:"";position:absolute;inset:0;background:rgba(42,28,21,0);transition:background .3s}
+.ig-grid a:hover img{transform:scale(1.08)}
+.ig-grid a:hover::after{background:rgba(42,28,21,.25)}
+
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.faq h2{font-size:clamp(44px,5.4vw,80px)}
+.faq details{border-top:1px solid var(--line);padding:26px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:600;line-height:1.15}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:Jost;font-weight:300;font-size:30px;line-height:1;color:var(--rose);transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--cocoa);margin-top:12px;font-size:16.5px;max-width:620px}
+
+footer{background:var(--espresso);color:#c9b6a2;padding:100px 0 40px;border-radius:44px 44px 0 0;margin-top:40px}
+.f-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.1)}
+.f-top h2{font-family:"Cormorant Garamond",serif;font-size:clamp(52px,7vw,110px);font-weight:600;line-height:.95;color:var(--cream)}
+.f-top h2 i{color:var(--gold-2);font-weight:500}
+.f-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding:50px 0}
+.f-grid h4{color:var(--cream);font-size:12px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px;font-weight:600}
+.f-grid p,.f-grid li{font-size:14.5px;list-style:none;line-height:1.8}
+.f-grid a{text-decoration:none}
+.f-grid a:hover{color:var(--cream)}
+.f-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:#8f7a68;padding-top:26px;border-top:1px solid rgba(255,255,255,.1)}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1.1s cubic-bezier(.2,.8,.2,1),transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.hero h1 .w{opacity:1;transform:none}}
+
+@media (max-width:1020px){
+  nav.l,nav.r ul{display:none}
+  header .wrap{grid-template-columns:auto 1fr;}
+  .logo{text-align:left}
+  .hero-grid,.story,.events,.loc-wrap,.faq{grid-template-columns:1fr}
+  .collage{height:520px;max-width:560px;margin:0 auto;width:100%}
+  .grid-menu{grid-template-columns:1fr 1fr}
+  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .pad{padding:90px 0}
+  .menu{padding:90px 0;margin:0 8px;border-radius:30px}
+  .ev-photos{height:480px}
+  .story,.events,.faq{gap:44px}
 }
-@media (max-width:480px){
-  header .btn{display:none}
-  .sticker{width:96px;height:96px;font-size:13px}
-  .sticker b{font-size:24px}
+@media (max-width:620px){
+  .wrap{padding:0 16px}
+  .hero{padding:40px 0 80px}
+  .collage{height:420px}
+  .c-main{inset:0 30px 50px 20px}
+  .c-a{width:150px;height:190px;left:-6px}
+  .c-b{width:130px;height:130px}
+  .badge{width:112px;height:112px;right:6px;bottom:10px}
+  .badge .core{inset:28px}
+  .grid-menu{grid-template-columns:1fr}
+  .tabs{width:100%;overflow-x:auto}
+  .tabs button{padding:10px 16px;font-size:14px}
+  .rv{width:300px;padding:24px}
+  .rv p{font-size:21px}
+  .loc-info{grid-template-columns:1fr}
+  .ev-photos{height:380px}
+  .ev-1{inset:0 60px 90px 0}
+  .ev-2{width:190px;height:200px}
+  .f-grid{grid-template-columns:1fr}
+  .counters b{font-size:48px}
+  .para{height:480px}
+  header .btn{padding:12px 18px}
 }
 </style>
 </head>
 <body>
 
-<div class="concept"><b>Website concept</b> — a free sample design made for Paul &amp; Jack. Not affiliated with or published by the business.</div>
+<div class="concept"><b>Website concept</b> — a free sample design made for Paul &amp; Jack. Not affiliated with the business. Photos are stock placeholders.</div>
 
-<header>
+<header id="hdr">
   <div class="wrap">
-    <a href="#top" class="logo">Paul <i>&amp;</i> Jack</a>
-    <nav><ul>
-      <li><a href="#case">The case</a></li>
-      <li><a href="#events">Cakes &amp; events</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#locations">Locations</a></li>
-    </ul></nav>
-    <a class="btn btn-dark" href="#locations">Find a café</a>
+    <nav class="l" aria-label="Primary"><ul><li><a href="#menu">Menu</a></li><li><a href="#events">Cakes &amp; events</a></li><li><a href="#reviews">Reviews</a></li></ul></nav>
+    <a href="#top" class="logo"><b>Paul <i>&amp;</i> Jack</b><small>Bakery · Café</small></a>
+    <nav class="r" aria-label="Secondary"><ul><li><a href="#locations">Locations</a></li><li><a href="#faq">FAQ</a></li></ul><a class="btn btn-dark" href="#locations">Find a café</a></nav>
   </div>
 </header>
 
 <main id="top">
-<section class="hero" style="padding-top:72px">
-  <div class="wrap">
+<section class="hero">
+  <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">European bakery &amp; café · Raleigh · Cary · Wake Forest</span>
-      <h1>Pastries that taste like a trip to <em>Europe.</em></h1>
-      <p>Flaky croissants, bomboloni, celebration cakes and good coffee, made fresh every morning and served with real hospitality.</p>
-      <div class="cta">
-        <a class="btn btn-dark" href="#locations">Visit us today</a>
-        <a class="btn btn-line" href="#events">Order for an event</a>
+      <h1 class="serif" id="heroTitle">Baked fresh, <em class="it">every single</em> morning.</h1>
+      <p class="lead reveal d2">Flaky croissants, filled bomboloni, celebration cakes and good coffee, served with genuine hospitality at three cafés across Raleigh, Cary and Wake Forest.</p>
+      <div class="cta reveal d3">
+        <a class="btn btn-dark" href="#menu">Explore the menu</a>
+        <a class="btn btn-line" href="#locations">Visit a café</a>
       </div>
-      <div class="proof">
-        <div><strong>4.8★</strong>average on Google</div>
-        <div><strong>2,700+</strong>reviews</div>
-        <div><strong>3</strong>cafés in the Triangle</div>
+      <div class="trust reveal d3">
+        <div class="faces" aria-hidden="true">
+          <span style="background-image:url('https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=120&h=120&q=70')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1778447964490-8e52582f081c?auto=format&fit=crop&w=120&h=120&q=70')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1559001724-fbad036dbc9e?auto=format&fit=crop&w=120&h=120&q=70')"></span>
+        </div>
+        <div><b>4.8</b> <span class="stars">★★★★★</span><small>from 2,700+ Google reviews across our three cafés</small></div>
       </div>
     </div>
-    <div class="plate" aria-hidden="true">
-      <div class="disc"></div>
-      <svg viewBox="0 0 200 200" fill="none">
-        <path d="M30 120c10-38 40-62 70-62s60 24 70 62c-12 10-30 16-70 16s-58-6-70-16z" fill="#e3a54a"/>
-        <path d="M30 120c10-38 40-62 70-62s60 24 70 62" stroke="#b9752a" stroke-width="3"/>
-        <path d="M62 78c6 18 8 36 6 56M88 64c4 22 4 46 0 70M112 64c-4 22-4 46 0 70M138 78c-6 18-8 36-6 56" stroke="#b9752a" stroke-width="3" stroke-linecap="round"/>
-        <path d="M44 132c16 6 34 8 56 8s40-2 56-8" stroke="#a8661f" stroke-width="3" stroke-linecap="round"/>
-        <ellipse cx="78" cy="82" rx="10" ry="4" fill="#f6d79a" opacity=".7" transform="rotate(-20 78 82)"/>
-      </svg>
-      <div class="sticker"><span><b>Fresh</b>every<br>morning</span></div>
+    <div class="collage">
+      <figure class="c-main"><img src="https://images.unsplash.com/photo-1763207291761-e27bb059d851?auto=format&fit=crop&w=1200&q=80" alt="A pile of freshly baked croissants"></figure>
+      <figure class="c-a"><img src="https://images.unsplash.com/photo-1763647872237-c76e660cf38b?auto=format&fit=crop&w=600&q=80" alt="Latte with croissants"></figure>
+      <figure class="c-b"><img src="https://images.unsplash.com/photo-1790543006976-2be3ffff750b?auto=format&fit=crop&w=500&q=80" alt="Filled pastries"></figure>
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><circle cx="100" cy="100" r="98" fill="#e2b66b"/><text font-family="Jost" font-size="17" font-weight="600" letter-spacing="5.2" fill="#2a1c15"><textPath href="#circ">BAKED FRESH · EVERY MORNING · BAKED FRESH · </textPath></text></svg>
+        <div class="core"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M5 26c3-10 9-15 15-15s12 5 15 15c-3 2-8 3-15 3S8 28 5 26z" fill="currentColor"/><path d="M13 14c2 4 2 9 1 14M20 11v18M27 14c-2 4-2 9-1 14" stroke="#2a1c15" stroke-width="1.6"/></svg></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="case" class="case">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">From the case</span>
-      <h2>Guest favorites</h2>
-      <p>A taste of what you’ll find. The case changes daily, so come early for the best pick.</p>
-    </div>
-    <div class="items">
-      <div class="item"><span class="tag">Popular</span>
-        <svg class="ic" viewBox="0 0 56 56" fill="none"><path d="M6 36c4-14 12-22 22-22s18 8 22 22c-4 3-10 5-22 5S10 39 6 36z" fill="#e3a54a"/><path d="M8 36c6-3 12-4 20-4s14 1 20 4" stroke="#5a3d2e" stroke-width="5" stroke-linecap="round"/></svg>
-        <h3>Chocolate ganache croissant</h3><p>All-butter layers filled and topped with silky chocolate.</p></div>
-      <div class="item"><span class="tag">Popular</span>
-        <svg class="ic" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="20" fill="#e3a54a"/><path d="M28 28m-4 0a4 4 0 1 0 8 0a8 8 0 1 0-16 0a12 12 0 1 0 24 0" stroke="#b9752a" stroke-width="3" fill="none"/><path d="M14 22c6-4 22-4 28 0" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/></svg>
-        <h3>Cinnamon roll</h3><p>Soft, swirled and finished with a sweet glaze.</p></div>
-      <div class="item"><span class="tag">Popular</span>
-        <svg class="ic" viewBox="0 0 56 56" fill="none"><rect x="10" y="12" width="36" height="32" rx="8" fill="#e3a54a"/><circle cx="28" cy="28" r="9" fill="#fff"/><circle cx="28" cy="28" r="5" fill="#f2b632"/></svg>
-        <h3>Egg danish</h3><p>A savory favorite on a crisp, buttery pastry base.</p></div>
-      <div class="item">
-        <svg class="ic" viewBox="0 0 56 56" fill="none"><path d="M6 36c4-14 12-22 22-22s18 8 22 22c-4 3-10 5-22 5S10 39 6 36z" fill="#d9993f"/><g fill="#2b1d16"><circle cx="20" cy="24" r="1.6"/><circle cx="28" cy="20" r="1.6"/><circle cx="36" cy="25" r="1.6"/><circle cx="24" cy="30" r="1.6"/><circle cx="33" cy="31" r="1.6"/></g><g fill="#fff"><circle cx="17" cy="30" r="1.4"/><circle cx="30" cy="26" r="1.4"/><circle cx="39" cy="30" r="1.4"/></g></svg>
-        <h3>Everything croissant</h3><p>Flaky croissant meets everything-bagel seasoning.</p></div>
-      <div class="item">
-        <svg class="ic" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="30" r="18" fill="#e3a54a"/><path d="M16 22c6-6 18-6 24 0" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="28" cy="30" r="5" fill="#c86b5a"/></svg>
-        <h3>Bomboloni</h3><p>Italian filled doughnuts, the one that started it all.</p></div>
-      <div class="item">
-        <svg class="ic" viewBox="0 0 56 56" fill="none"><path d="M10 26h36v18H10z" fill="#f1e7d8"/><path d="M10 26h36" stroke="#c86b5a" stroke-width="5"/><path d="M10 34h36" stroke="#5a3d2e" stroke-width="3"/><path d="M14 20h28l4 6H10z" fill="#c86b5a"/><circle cx="28" cy="15" r="3" fill="#c86b5a"/></svg>
-        <h3>Cakes &amp; pavlova</h3><p>Slices to enjoy here, or whole cakes for the occasion.</p></div>
-    </div>
-    <p style="margin-top:24px;color:var(--muted);font-size:15px">Plus espresso drinks, iced coffee, savory options and gluten-free choices.</p>
+<div class="marquee" aria-hidden="true">
+  <div class="mtrack">
+    <span>Croissants</span><span>Bomboloni</span><span>Pavlova</span><span>Celebration cakes</span><span>Cinnamon rolls</span><span>Espresso</span><span>Danishes</span><span>Gluten-free options</span>
+    <span>Croissants</span><span>Bomboloni</span><span>Pavlova</span><span>Celebration cakes</span><span>Cinnamon rolls</span><span>Espresso</span><span>Danishes</span><span>Gluten-free options</span>
   </div>
-</section>
+</div>
 
-<section id="events" class="events">
-  <div class="wrap">
+<section class="pad">
+  <div class="wrap story">
     <div>
-      <span class="eyebrow">Cakes &amp; events</span>
-      <h2 style="font-size:clamp(34px,4.6vw,54px);margin-top:12px">Make the occasion sweeter</h2>
-      <p style="color:var(--cocoa);font-size:18px;margin-top:14px">From birthdays to office mornings to community events, we’ll put together pastries that look as good as they taste.</p>
-      <ul>
-        <li><span>1</span><div><b>Whole cakes</b><br><span style="all:unset;color:var(--cocoa)">Love a slice? Most of our cakes are available whole for special occasions.</span></div></li>
-        <li><span>2</span><div><b>Pastry trays for events</b><br><span style="all:unset;color:var(--cocoa)">Beautifully presented assortments for meetings, parties and resident events.</span></div></li>
-        <li><span>3</span><div><b>Just ask</b><br><span style="all:unset;color:var(--cocoa)">Call your nearest café to talk through dates, quantities and favorites.</span></div></li>
-      </ul>
-      <div class="cta"><a class="btn btn-dark" href="#locations">Call your nearest café</a></div>
+      <span class="eyebrow reveal">Our story</span>
+      <h2 class="serif reveal d1" style="margin-top:18px">A little corner of <em class="it">Europe</em>, right here in North Carolina.</h2>
+      <p class="reveal d2">It started with bomboloni and a community that kept telling their friends. Today Paul &amp; Jack is three neighborhood cafés with a freshly stocked case every morning, good coffee, and a team people mention by name in their reviews.</p>
     </div>
-    <div class="quote-card">
-      <p>“Their staff is incredibly friendly and professional, the presentation is absolutely stunning, and the pastries are just as delicious.”</p>
-      <cite>Google review · ordered for two resident events in Cary</cite>
+    <div class="counters reveal d2">
+      <div><b data-count="2700" data-suffix="+">0</b><small>Google reviews</small></div>
+      <div><b data-count="3">0</b><small>Cafés in the Triangle</small></div>
+      <div><b data-count="120" data-suffix="K+">0</b><small>Instagram followers</small></div>
+      <div><b data-count="7" data-suffix=" AM">0</b><small>Open every day</small></div>
     </div>
   </div>
 </section>
 
-<section id="reviews" class="reviews">
+<section class="menu" id="menu">
   <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Reviews</span>
-      <h2>The Triangle’s favorite European bakery</h2>
+    <div class="menu-head">
+      <div><span class="eyebrow">The case</span><h2 class="serif" style="margin-top:16px">Guest <em class="it" style="color:var(--gold-2)">favorites</em></h2></div>
+      <div class="tabs" role="tablist" aria-label="Menu categories">
+        <button role="tab" aria-selected="true" data-cat="pastries">Pastries</button>
+        <button role="tab" aria-selected="false" data-cat="cakes">Cakes &amp; desserts</button>
+        <button role="tab" aria-selected="false" data-cat="coffee">Coffee</button>
+      </div>
     </div>
-    <div class="revs">
-      <div class="rev"><span class="stars">★★★★★</span><p>“Honestly, this is the best dessert place around. It feels just like being in Europe.”</p><small>Google review · Raleigh</small></div>
-      <div class="rev"><span class="stars">★★★★★</span><p>“Everything about this place is perfect: the food, the vibe, the people.”</p><small>Google review · Raleigh</small></div>
-      <div class="rev"><span class="stars">★★★★★</span><p>“Lovely variety of sweet treats and some savory options too. Coffee was delicious. Staff is very friendly.”</p><small>Google review · Cary</small></div>
-    </div>
-    <div class="chips"><span>Flaky croissants</span><span>Pavlova</span><span>Gluten-free options</span><span>Friendly staff</span><span>Great coffee</span></div>
+    <div class="grid-menu" id="menuGrid" role="tabpanel"></div>
+    <div class="menu-note"><span>The case changes daily</span><span>Gluten-free options</span><span>Dine-in &amp; takeout</span></div>
   </div>
 </section>
 
-<section id="locations">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Locations</span>
-      <h2>Three cafés, one bakery</h2>
-      <p>Open 7 AM every day.</p>
+<section class="para" aria-label="Customer quote">
+  <div class="bg" id="paraBg"></div>
+  <blockquote class="reveal">“Honestly, this is the best dessert place around. It feels just like being in Europe.”<cite>Google review · Downtown Raleigh</cite></blockquote>
+</section>
+
+<section class="pad" id="events">
+  <div class="wrap events">
+    <div class="ev-photos reveal">
+      <figure class="ev-1"><img loading="lazy" src="https://images.unsplash.com/photo-1583338917451-face2751d8d5?auto=format&fit=crop&w=1000&q=80" alt="Assorted tarts and cakes in a display case"></figure>
+      <figure class="ev-2"><img loading="lazy" src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=600&q=80" alt="Layered cake slice"></figure>
     </div>
-    <div class="locs">
-      <div class="loc">
-        <span class="area">Glenwood South</span>
-        <h3>Downtown Raleigh</h3>
-        <address>911 N West St, Ste 107<br>Raleigh, NC 27603</address>
-        <div class="rating"><span class="stars">★★★★★</span> 4.7 · 1,000+ reviews</div>
-        <table><tr><td>Mon – Thu</td><td>7 AM – 6 PM</td></tr><tr><td>Fri – Sun</td><td>7 AM – 8 PM</td></tr></table>
-        <div class="actions">
-          <a class="btn btn-dark" href="tel:+19199990044">(919) 999-0044</a>
-          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Paul+and+Jack+911+N+West+St+Raleigh+NC" target="_blank" rel="noopener">Directions</a>
-        </div>
+    <div>
+      <span class="eyebrow reveal">Cakes &amp; events</span>
+      <h2 class="serif reveal d1" style="margin-top:18px">Make the occasion <em class="it">sweeter.</em></h2>
+      <p class="lead reveal d2">Birthdays, office mornings, showers and community events: we’ll put together pastries that look as good as they taste.</p>
+      <div class="ev-list reveal d2">
+        <div class="ev-item"><span class="n">i.</span><div><b>Whole cakes</b><p>Love a slice? Most of our cakes are available whole for special occasions.</p></div></div>
+        <div class="ev-item"><span class="n">ii.</span><div><b>Pastry trays</b><p>Beautifully presented assortments for meetings, parties and resident events.</p></div></div>
+        <div class="ev-item"><span class="n">iii.</span><div><b>Just call</b><p>Talk to your nearest café about dates, quantities and favorites.</p></div></div>
       </div>
-      <div class="loc">
-        <span class="area">Lake Pine</span>
-        <h3>Cary</h3>
-        <address>1881 Lake Pine Dr<br>Cary, NC 27511</address>
-        <div class="rating"><span class="stars">★★★★★</span> 4.8 · 290+ reviews</div>
-        <table><tr><td>Mon – Thu</td><td>7 AM – 6 PM</td></tr><tr><td>Fri – Sun</td><td>7 AM – 8 PM</td></tr></table>
-        <div class="actions">
-          <a class="btn btn-dark" href="tel:+19848847107">(984) 884-7107</a>
-          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Paul+and+Jack+1881+Lake+Pine+Dr+Cary+NC" target="_blank" rel="noopener">Directions</a>
-        </div>
-      </div>
-      <div class="loc">
-        <span class="area">South Main</span>
-        <h3>Wake Forest</h3>
-        <address>2010 S Main St, #404<br>Wake Forest, NC 27587</address>
-        <div class="rating"><span class="stars">★★★★★</span> 4.8 · 1,400+ reviews</div>
-        <table><tr><td>Mon – Thu</td><td>7 AM – 6 PM</td></tr><tr><td>Fri – Sun</td><td>7 AM – 8 PM</td></tr></table>
-        <div class="actions">
-          <a class="btn btn-dark" href="tel:+19198550870">(919) 855-0870</a>
-          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Paul+and+Jack+2010+S+Main+St+Wake+Forest+NC" target="_blank" rel="noopener">Directions</a>
-        </div>
-      </div>
+      <div class="ev-quote reveal d3">“The presentation is absolutely stunning, and the pastries are just as delicious.”<small>Google review · ordered for two resident events in Cary</small></div>
     </div>
-    <p style="margin-top:20px;color:var(--muted);font-size:14px">Holiday hours may differ.</p>
   </div>
 </section>
 
-<section class="insta">
+<section class="pad reviews" id="reviews">
+  <div class="wrap rv-head">
+    <div><span class="eyebrow reveal">Kind words</span><h2 class="serif reveal d1" style="margin-top:16px">Loved across <em class="it">the Triangle</em></h2></div>
+    <div class="big-rating reveal d2"><b>4.8</b><div><span class="stars">★★★★★</span><small>2,700+ Google reviews</small></div></div>
+  </div>
+  <div class="rv-track" id="rvTrack">
+    <article class="rv"><span class="stars">★★★★★</span><p>“Everything about this place is perfect: the food, the vibe, the people.”</p><small><i>R</i>Downtown Raleigh</small></article>
+    <article class="rv"><span class="stars">★★★★★</span><p>“Lovely variety of sweet treats and some savory options too. Coffee was delicious. Staff is very friendly.”</p><small><i>C</i>Cary</small></article>
+    <article class="rv"><span class="stars">★★★★★</span><p>“We absolutely loved this place! The food was delicious, the desserts were amazing, and the coffee was great.”</p><small><i>R</i>Downtown Raleigh</small></article>
+    <article class="rv"><span class="stars">★★★★★</span><p>“Very welcoming, nice environment, delicious treats with gluten-free options!”</p><small><i>R</i>Downtown Raleigh</small></article>
+    <article class="rv"><span class="stars">★★★★★</span><p>“Paul &amp; Jack is the perfect spot for authentic French pastries.”</p><small><i>W</i>Wake Forest</small></article>
+    <article class="rv"><span class="stars">★★★★★</span><p>“The pastries were delicious, but the customer service truly made our visit special.”</p><small><i>R</i>Downtown Raleigh</small></article>
+  </div>
+  <div class="wrap"><div class="chips reveal"><span>Croissants<b>172</b></span><span>Flaky croissants<b>18</b></span><span>Pavlova<b>6</b></span><span>Gluten-free options</span><span>Friendly staff</span></div></div>
+</section>
+
+<section class="pad" id="locations">
   <div class="wrap">
-    <span class="eyebrow" style="color:var(--butter)">@paulandjack_nc</span>
-    <h2 style="margin-top:12px">See what’s in the case today</h2>
-    <p>New bakes, seasonal specials and behind-the-scenes, shared daily with 120K+ followers.</p>
-    <a class="btn" href="https://www.instagram.com/paulandjack_nc" target="_blank" rel="noopener">Follow on Instagram</a>
+    <div class="rv-head">
+      <div><span class="eyebrow reveal">Locations</span><h2 class="serif reveal d1" style="font-size:clamp(44px,5.4vw,80px);margin-top:16px">Three cafés, <em class="it">one bakery</em></h2></div>
+      <p class="reveal d2" style="color:var(--cocoa);max-width:380px;font-size:17px">Open 7 AM every day. Pick your café for hours, directions and to call ahead.</p>
+    </div>
+    <div class="loc-wrap">
+      <div class="loc-tabs reveal" role="tablist" aria-label="Locations" id="locTabs"></div>
+      <div class="loc-panel reveal d1" role="tabpanel">
+        <div class="loc-map"><iframe id="locMap" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="loc-info">
+          <dl><dt>Address</dt><dd id="locAddr"></dd><dt style="margin-top:16px">Phone</dt><dd><a id="locPhoneTxt" href="#"></a></dd></dl>
+          <div><dt>Hours</dt><table><tr><td>Mon – Thu</td><td>7 AM – 6 PM</td></tr><tr><td>Fri – Sun</td><td>7 AM – 8 PM</td></tr></table><small style="color:var(--muted);font-size:12.5px">Holiday hours may differ</small></div>
+          <div class="loc-actions"><a class="btn btn-dark" id="locCall" href="#">Call this café</a><a class="btn btn-line" id="locDir" target="_blank" rel="noopener" href="#">Get directions</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad insta" style="padding-top:40px">
+  <div class="wrap">
+    <span class="eyebrow reveal">@paulandjack_nc</span>
+    <h2 class="serif reveal d1" style="margin-top:16px">Fresh from the <em class="it">case</em></h2>
+    <p class="reveal d2">New bakes, seasonal specials and behind-the-scenes, shared daily with 120K+ followers.</p>
+    <div class="ig-grid reveal d2">
+      <a href="https://www.instagram.com/paulandjack_nc" target="_blank" rel="noopener" aria-label="Instagram"><img loading="lazy" src="https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=500&h=500&q=75" alt=""></a>
+      <a href="https://www.instagram.com/paulandjack_nc" target="_blank" rel="noopener" aria-label="Instagram"><img loading="lazy" src="https://images.unsplash.com/photo-1784649844526-cf8a1c060858?auto=format&fit=crop&w=500&h=500&q=75" alt=""></a>
+      <a href="https://www.instagram.com/paulandjack_nc" target="_blank" rel="noopener" aria-label="Instagram"><img loading="lazy" src="https://images.unsplash.com/photo-1778447964490-8e52582f081c?auto=format&fit=crop&w=500&h=500&q=75" alt=""></a>
+      <a href="https://www.instagram.com/paulandjack_nc" target="_blank" rel="noopener" aria-label="Instagram"><img loading="lazy" src="https://images.unsplash.com/photo-1559001724-fbad036dbc9e?auto=format&fit=crop&w=500&h=500&q=75" alt=""></a>
+      <a href="https://www.instagram.com/paulandjack_nc" target="_blank" rel="noopener" aria-label="Instagram"><img loading="lazy" src="https://images.unsplash.com/photo-1528591922185-a0eb2f8f50b6?auto=format&fit=crop&w=500&h=500&q=75" alt=""></a>
+      <a href="https://www.instagram.com/paulandjack_nc" target="_blank" rel="noopener" aria-label="Instagram"><img loading="lazy" src="https://images.unsplash.com/photo-1790543006976-2be3ffff750b?auto=format&fit=crop&w=500&h=500&q=75" alt=""></a>
+    </div>
+    <a class="btn btn-dark reveal" href="https://www.instagram.com/paulandjack_nc" target="_blank" rel="noopener">Follow on Instagram</a>
+  </div>
+</section>
+
+<section class="pad" id="faq" style="padding-top:60px">
+  <div class="wrap faq">
+    <div><span class="eyebrow reveal">FAQ</span><h2 class="serif reveal d1" style="margin-top:16px">Before you <em class="it">visit</em></h2></div>
+    <div class="reveal d1">
+      <details open><summary>What time do you open?</summary><p>All three cafés open at 7 AM every day. We close at 6 PM Monday through Thursday and 8 PM Friday through Sunday. Holiday hours may differ.</p></details>
+      <details><summary>Do you have gluten-free options?</summary><p>Yes, we offer gluten-free choices alongside our pastries. Ask the team what’s in the case today.</p></details>
+      <details><summary>Can I order a whole cake?</summary><p>Most of the cakes we sell by the slice are also available whole for birthdays and special occasions. Call your nearest café to arrange it.</p></details>
+      <details><summary>Do you do pastries for events?</summary><p>We regularly put together pastry spreads for meetings, parties and community events. Call ahead with your date and headcount.</p></details>
+      <details><summary>Is there seating?</summary><p>Every café offers dine-in and takeout. Seating can fill up at busy times, especially weekend mornings.</p></details>
+    </div>
   </div>
 </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Paul &amp; Jack · Raleigh · Cary · Wake Forest, NC</span>
-    <span>Concept design preview</span>
+    <div class="f-top"><h2>See you <i>at 7 AM.</i></h2><a class="btn btn-gold" href="#locations">Find your café</a></div>
+    <div class="f-grid">
+      <div><h4>Downtown Raleigh</h4><p>911 N West St, Ste 107<br>Raleigh, NC 27603<br><a href="tel:+19199990044">(919) 999-0044</a></p></div>
+      <div><h4>Cary</h4><p>1881 Lake Pine Dr<br>Cary, NC 27511<br><a href="tel:+19848847107">(984) 884-7107</a></p></div>
+      <div><h4>Wake Forest</h4><p>2010 S Main St, #404<br>Wake Forest, NC 27587<br><a href="tel:+19198550870">(919) 855-0870</a></p></div>
+      <div><h4>Follow</h4><ul><li><a href="https://www.instagram.com/paulandjack_nc" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/paulandjackbakery/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+    </div>
+    <div class="f-bot"><span>© 2026 Paul &amp; Jack Bakery · Café</span><span>Concept design preview · Stock photos via Unsplash</span></div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var U='https://images.unsplash.com/photo-',Q='?auto=format&fit=crop&w=800&h=600&q=78';
+  // header border
+  var hdr=document.getElementById('hdr');window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>10)},{passive:true});
+
+  // hero word animation
+  var t=document.getElementById('heroTitle'),delay=0;
+  (function wrap(node){Array.from(node.childNodes).forEach(function(n){
+    if(n.nodeType===3){var frag=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(function(w){if(!w)return;if(/^\s+$/.test(w)){frag.appendChild(document.createTextNode(w));return}var s=document.createElement('span');s.className='w';s.style.animationDelay=(delay+=0.08)+'s';s.textContent=w;frag.appendChild(s)});node.replaceChild(frag,n)}
+    else wrap(n)})})(t);
+
+  // reveal
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12}):null;
+  document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('on')});
+
+  // counters
+  function run(el){var to=+el.dataset.count,suf=el.dataset.suffix||'',s=null;function f(ts){if(!s)s=ts;var p=Math.min((ts-s)/1600,1),v=Math.round(to*(1-Math.pow(1-p,3)));el.textContent=v.toLocaleString()+suf;if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+  var cio='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run(e.target);cio.unobserve(e.target)}})},{threshold:.5}):null;
+  document.querySelectorAll('[data-count]').forEach(function(el){cio?cio.observe(el):(el.textContent=el.dataset.count+(el.dataset.suffix||''))});
+
+  // menu tabs
+  var M={
+    pastries:[
+      {n:'Chocolate ganache croissant',d:'All-butter layers, filled and topped with silky chocolate ganache.',i:'1790543006976-2be3ffff750b',p:1},
+      {n:'Butter croissant',d:'The classic: shatteringly crisp outside, soft and airy within.',i:'1623334044303-241021148842',p:0},
+      {n:'Bomboloni',d:'Italian filled doughnuts, rolled in sugar. The one that started it all.',i:'1784649844526-cf8a1c060858',p:0},
+      {n:'Cinnamon roll',d:'Soft, generously swirled, and finished with a sweet glaze.',i:'1764281469526-e1c378515e6f',p:1},
+      {n:'Egg danish &amp; savory bakes',d:'Savory favorites on crisp, buttery pastry. Great with a coffee.',i:'1767379755386-1b213fb63c07',p:1},
+      {n:'Everything croissant',d:'Our flaky croissant meets everything-bagel seasoning.',i:'1763207291761-e27bb059d851',p:1}
+    ],
+    cakes:[
+      {n:'Pavlova',d:'Crisp meringue, soft center, fresh cream and berries.',i:'1778634304489-89b386a1ac91',p:0},
+      {n:'Layer cakes',d:'By the slice, or whole for your celebration.',i:'1571115177098-24ec42ed204d',p:0},
+      {n:'Tarts &amp; petit gâteaux',d:'A rotating selection of individual desserts.',i:'1583338917451-face2751d8d5',p:0}
+    ],
+    coffee:[
+      {n:'Latte',d:'Smooth espresso and steamed milk, with a little latte art.',i:'1559001724-fbad036dbc9e',p:0},
+      {n:'Coffee &amp; a croissant',d:'The perfect morning pairing, at the café or to go.',i:'1763647872237-c76e660cf38b',p:0},
+      {n:'Iced coffee',d:'For warm Carolina afternoons.',i:'1461023058943-07fcbe16d735',p:0}
+    ]};
+  var grid=document.getElementById('menuGrid');
+  function show(cat){grid.innerHTML=M[cat].map(function(x,k){return '<article class="dish" style="animation-delay:'+(k*0.07)+'s"><figure><img loading="lazy" src="'+U+x.i+Q+'" alt="">'+(x.p?'<span class="pop">Popular</span>':'')+'</figure><div><h3>'+x.n+'</h3><p>'+x.d+'</p></div></article>'}).join('')}
+  document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});show(b.dataset.cat)})});
+  show('pastries');
+
+  // parallax
+  var pb=document.getElementById('paraBg');
+  function par(){var r=pb.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){pb.style.transform='translateY('+(r.top*-0.18)+'px)'}}
+  window.addEventListener('scroll',par,{passive:true});par();
+
+  // reviews marquee: duplicate for loop
+  var tr=document.getElementById('rvTrack');tr.innerHTML+=tr.innerHTML;
+
+  // locations
+  var L=[
+    {k:'Glenwood South',n:'Downtown Raleigh',a:'911 N West St, Ste 107<br>Raleigh, NC 27603',q:'Paul and Jack, 911 N West St, Raleigh, NC 27603',ph:'(919) 999-0044',t:'+19199990044',r:'4.7 · 1,000+ reviews'},
+    {k:'Lake Pine',n:'Cary',a:'1881 Lake Pine Dr<br>Cary, NC 27511',q:'Paul and Jack, 1881 Lake Pine Dr, Cary, NC 27511',ph:'(984) 884-7107',t:'+19848847107',r:'4.8 · 290+ reviews'},
+    {k:'South Main',n:'Wake Forest',a:'2010 S Main St, #404<br>Wake Forest, NC 27587',q:'Paul and Jack, 2010 S Main St, Wake Forest, NC 27587',ph:'(919) 855-0870',t:'+19198550870',r:'4.8 · 1,400+ reviews'}
+  ];
+  var open=false,sub='';
+  try{var now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'})),d=now.getDay(),h=now.getHours()+now.getMinutes()/60,close=(d===0||d>=5)?20:18;open=h>=7&&h<close;sub=open?'Open now':'Closed now'}catch(e){}
+  var tabs=document.getElementById('locTabs');
+  L.forEach(function(x,k){var b=document.createElement('button');b.className='ltab';b.setAttribute('role','tab');
+    b.innerHTML='<span class="area">'+x.k+'</span><h3>'+x.n+'</h3><div class="meta"><span class="stars">★★★★★</span><span>'+x.r+'</span></div>'+(sub?'<span class="open"><i class="dot'+(open?'':' off')+'"></i>'+sub+'</span>':'');
+    b.addEventListener('click',function(){pick(k)});tabs.appendChild(b)});
+  function pick(k){var x=L[k];tabs.querySelectorAll('.ltab').forEach(function(b,j){b.setAttribute('aria-selected',j===k)});
+    document.getElementById('locMap').src='https://maps.google.com/maps?q='+encodeURIComponent(x.q)+'&z=15&output=embed';
+    document.getElementById('locMap').title='Map to Paul & Jack '+x.n;
+    document.getElementById('locAddr').innerHTML=x.a;
+    var pt=document.getElementById('locPhoneTxt');pt.textContent=x.ph;pt.href='tel:'+x.t;
+    document.getElementById('locCall').href='tel:'+x.t;
+    document.getElementById('locDir').href='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(x.q)}
+  pick(1);
+})();
+</script>
 </body>
 </html>
